@@ -35,11 +35,11 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "Sarath Adhithya",
-      url: "https://sarathadhi.com",
+      name: "Jesus Vita",
+      url: "https://xyz.com",
     },
   ],
-  creator: "Sarath Adhithya",
+  creator: "Jesus Vita",
   metadataBase: new URL(siteConfig.url),
   openGraph: {
     type: "website",
