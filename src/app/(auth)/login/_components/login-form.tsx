@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { z } from "zod";
+import { useState } from "react";
 
 export const loginFormSchema = z.object({
   email: z.string().email(),
@@ -28,6 +29,7 @@ const defaultValues: LoginValuesType = {
 const LoginForm = () => {
   const router = useRouter();
   const { t } = useLanguage();
+  const [isLoadingGoogle, setIsLoadingGoogle] = useState(false);
 
   const supabase = createClient();
 
@@ -44,6 +46,26 @@ const LoginForm = () => {
     toast.success(t.login.loginSuccess);
 
     router.refresh();
+  }
+
+  async function handleGoogleLogin() {
+    setIsLoadingGoogle(true);
+    try {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+          redirectTo: `${window.location.origin}/auth/callback`,
+        },
+      });
+
+      if (error) {
+        toast.error(error.message);
+      }
+    } catch (error) {
+      toast.error("Error signing in with Google");
+    } finally {
+      setIsLoadingGoogle(false);
+    }
   }
 
   return (
@@ -69,6 +91,25 @@ const LoginForm = () => {
         />
 
         <Button>{t.login.button}</Button>
+
+        <div className="relative my-4">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-muted"></div>
+          </div>
+          <div className="relative flex justify-center text-xs uppercase">
+            <span className="bg-background px-2 text-muted-foreground">O</span>
+          </div>
+        </div>
+
+        <Button
+          type="button"
+          variant="outline"
+          onClick={handleGoogleLogin}
+          disabled={isLoadingGoogle}
+          className="w-full"
+        >
+          {isLoadingGoogle ? "Signing in..." : "Continue with Google"}
+        </Button>
       </form>
     </Form>
   );
