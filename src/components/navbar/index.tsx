@@ -8,7 +8,7 @@ import { createClient } from "@/utils/supabase/server";
 import { Lock } from "lucide-react";
 
 const Navbar = async () => {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const {
     data: { user },
