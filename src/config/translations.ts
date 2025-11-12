@@ -110,6 +110,14 @@ export const translations = {
       loading: "Cargando...",
     },
 
+    // 404 Not Found Page
+    notFound: {
+      title: "Página no encontrada",
+      heading: "404",
+      description: "Lo sentimos, la página que buscas no existe.",
+      backHome: "Volver al inicio",
+    },
+
     // Footer
     footer: {
       buildBy: "Construido por",
@@ -252,6 +260,14 @@ export const translations = {
       title: "Profile Page",
       email: "Email",
       loading: "Loading...",
+    },
+
+    // 404 Not Found Page
+    notFound: {
+      title: "Page not found",
+      heading: "404",
+      description: "Sorry, the page you're looking for doesn't exist.",
+      backHome: "Back to home",
     },
 
     // Footer
@@ -399,6 +415,14 @@ export const translations = {
       loading: "Wird geladen...",
     },
 
+    // 404 Not Found Page
+    notFound: {
+      title: "Seite nicht gefunden",
+      heading: "404",
+      description: "Entschuldigung, die gesuchte Seite existiert nicht.",
+      backHome: "Zurück zur Startseite",
+    },
+
     // Footer
     footer: {
       buildBy: "Gebaut von",
@@ -542,6 +566,14 @@ export const translations = {
       title: "Profilsida",
       email: "E-post",
       loading: "Laddar...",
+    },
+
+    // 404 Not Found Page
+    notFound: {
+      title: "Sida hittades inte",
+      heading: "404",
+      description: "Tyvärr finns inte sidan du letar efter.",
+      backHome: "Tillbaka till startsidan",
     },
 
     // Footer
@@ -689,6 +721,14 @@ export const translations = {
       loading: "Indlæser...",
     },
 
+    // 404 Not Found Page
+    notFound: {
+      title: "Side ikke fundet",
+      heading: "404",
+      description: "Desværre findes siden, du søger efter, ikke.",
+      backHome: "Tilbage til startsiden",
+    },
+
     // Footer
     footer: {
       buildBy: "Bygget af",
@@ -832,6 +872,14 @@ export const translations = {
       title: "Page de profil",
       email: "E-mail",
       loading: "Chargement...",
+    },
+
+    // 404 Not Found Page
+    notFound: {
+      title: "Page non trouvée",
+      heading: "404",
+      description: "Désolé, la page que vous recherchez n'existe pas.",
+      backHome: "Retour à l'accueil",
     },
 
     // Footer
@@ -979,6 +1027,14 @@ export const translations = {
       loading: "Загрузка...",
     },
 
+    // 404 Not Found Page
+    notFound: {
+      title: "Страница не найдена",
+      heading: "404",
+      description: "К сожалению, страница, которую вы ищете, не существует.",
+      backHome: "Вернуться на главную",
+    },
+
     // Footer
     footer: {
       buildBy: "Создано",
@@ -1122,6 +1178,14 @@ export const translations = {
       title: "Profiloldal",
       email: "E-mail",
       loading: "Betöltés...",
+    },
+
+    // 404 Not Found Page
+    notFound: {
+      title: "Oldal nem található",
+      heading: "404",
+      description: "Sajnos az Ön által keresett oldal nem létezik.",
+      backHome: "Vissza a kezdőlapra",
     },
 
     // Footer
