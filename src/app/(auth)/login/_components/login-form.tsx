@@ -51,10 +51,14 @@ const LoginForm = () => {
   async function handleGoogleLogin() {
     setIsLoadingGoogle(true);
     try {
+      const redirectUrl = typeof window !== "undefined" 
+        ? window.location.origin 
+        : process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+      
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
-          redirectTo: `${window.location.origin}/auth/callback`,
+          redirectTo: `${redirectUrl}/auth/callback`,
         },
       });
 
