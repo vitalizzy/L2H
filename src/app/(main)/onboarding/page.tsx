@@ -2,7 +2,7 @@
 
 import { createClient } from "@/utils/supabase/client";
 import { useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { InputForm } from "@/components/ui/input/input-form";
 import { Form } from "@/components/ui/form";
@@ -21,7 +21,6 @@ type OnboardingValues = z.infer<typeof onboardingSchema>;
 
 export default function OnboardingPage() {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const { t } = useLanguage();
   const supabase = createClient();
   const [loading, setLoading] = useState(true);
