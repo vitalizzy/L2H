@@ -4,6 +4,7 @@ import { NextResponse, type NextRequest } from "next/server";
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
+  const code = searchParams.get("code");
   const token_hash = searchParams.get("token_hash");
   const type = searchParams.get("type") as EmailOtpType | null;
   const next = searchParams.get("next") ?? "/";
@@ -12,7 +13,23 @@ export async function GET(request: NextRequest) {
   redirectTo.pathname = next;
   redirectTo.searchParams.delete("token_hash");
   redirectTo.searchParams.delete("type");
+  redirectTo.searchParams.delete("code");
 
+  // Handle OAuth callback (Google, etc.)
+  if (code) {
+    const supabase = await createClient();
+    const { error, data } = await supabase.auth.exchangeCodeForSession(code);
+    
+    console.log("OAuth callback - code:", code);
+    console.log("OAuth callback - error:", error);
+    console.log("OAuth callback - data:", data);
+    
+    if (!error) {
+      return NextResponse.redirect(redirectTo);
+    }
+  }
+
+  // Handle email verification
   if (token_hash && type) {
     const supabase = await createClient();
 

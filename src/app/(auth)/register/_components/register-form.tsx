@@ -55,7 +55,7 @@ const RegisterForm = () => {
     router.replace("/email-verify");
   }
 
-  async function handleGoogleSignUp() {
+  async function handleGoogleRegister() {
     setIsLoadingGoogle(true);
     try {
       const redirectUrl = typeof window !== "undefined" 
@@ -115,7 +115,7 @@ const RegisterForm = () => {
         <Button
           type="button"
           variant="outline"
-          onClick={handleGoogleSignUp}
+          onClick={handleGoogleRegister}
           disabled={isLoadingGoogle}
           className="w-full"
         >
