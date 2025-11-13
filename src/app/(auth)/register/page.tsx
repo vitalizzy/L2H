@@ -6,14 +6,11 @@ import { ChevronLeftCircle } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/context/language-context";
 import RegisterForm from "./_components/register-form";
-import { useSearchParams } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
 const RegisterPage = () => {
   const { t } = useLanguage();
-  const searchParams = useSearchParams();
-  const emailFromGoogle = searchParams.get("email");
 
   return (
     <section className="container flex h-screen flex-col items-center justify-center">
@@ -31,9 +28,7 @@ const RegisterPage = () => {
           </h1>
 
           <p className="text-sm text-muted-foreground">
-            {emailFromGoogle 
-              ? `Complete your registration with ${emailFromGoogle}` 
-              : t.register.description}
+            {t.register.description}
           </p>
         </div>
 
