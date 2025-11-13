@@ -151,7 +151,6 @@ export const translations = {
       romanian: "Română",
     },
   },
-
   en: {
     // Navigation
     navbar: {
@@ -303,7 +302,6 @@ export const translations = {
       romanian: "Română",
     },
   },
-
   de: {
     // Navigation
     navbar: {
@@ -456,282 +454,120 @@ export const translations = {
       romanian: "Română",
     },
   },
-
-  sv: {
+  it: {
     // Navigation
     navbar: {
       title: "Next Level Auth",
-      myAccount: "Mitt Konto",
-      profile: "Profil",
-      logout: "Logga ut",
-      login: "Logga in",
-      toggleTheme: "Växla tema",
+      myAccount: "Il mio account",
+      profile: "Profilo",
+      logout: "Esci",
+      login: "Accedi",
+      toggleTheme: "Cambia tema",
     },
 
     // Home Page
     home: {
-      badge: "Minimal mall med",
+      badge: "Modello minimalista con",
       title:
-        "Next.js 14 Supabase Authentication Playground: Bygga moderna webbupplevelser tillsammans",
+        "Next.js 14 Supabase Authentication Playground: Costruire esperienze web moderne insieme",
       description:
-        "Utforska världen av öppen källkod och säker webbutveckling. Varje rad kod är öppen källkod - Bidra till framtiden för webbutveckling med Supabase Authentication!",
-      getStarted: "Kom igång",
+        "Esplora il mondo della codifica open source e dello sviluppo web sicuro. Ogni riga di codice è open source - Contribuisci al futuro dello sviluppo web con Supabase Authentication!",
+      getStarted: "Inizia",
       github: "GitHub",
-      keyFeatures: "Viktiga funktioner",
-      openSource: "Helt öppen källkod",
+      keyFeatures: "Caratteristiche principali",
+      openSource: "Completamente open source",
       openSourceDescription:
-        "Koden för detta projekt är helt öppen källkod och tillgänglig på GitHub. Gå med i communityn och bidra till framtiden för webbutveckling!",
-      viewOnGithub: "Visa på GitHub",
+        "Il codice di questo progetto è completamente open source e disponibile su GitHub. Unisciti alla comunità e contribuisci al futuro dello sviluppo web!",
+      viewOnGithub: "Visualizza su GitHub",
     },
 
     // Features
     features: {
       serverComponents: {
-        name: "Serverkomponenter",
+        name: "Componenti server",
         description:
-          "Utnyttja kraften hos serverkomponenter för sömlös rendering och förbättrad prestanda.",
+          "Sfrutta la potenza dei componenti server per il rendering senza interruzioni e prestazioni migliorate.",
       },
       authentication: {
-        name: "Autentisering",
+        name: "Autenticazione",
         description:
-          "Säkra din tillämpning med robust autentisering tillhandahållen av Supabase Auth.",
-      },
-      openSource: {
-        name: "Öppen källkod",
-        description:
-          "Samarbeta med utvecklare världen över för att förbättra och förnya, vilket gör en varaktig inverkan på projektet.",
-      },
-      modernUI: {
-        name: "Modern UI",
-        description:
-          "Skapa fantastiska och responsiva användargränssnitt med de senaste designprinciperna och metoderna.",
-      },
-      learnMore: "Lär dig mer",
-    },
-
-    // Login Page
-    login: {
-      title: "Välkommen tillbaka",
-      description:
-        "Ange din e-post och lösenord för att logga in på ditt konto",
-      email: "E-post",
-      password: "Lösenord",
-      button: "Logga in",
-      noAccount: "Har du inget konto?",
-      register: "Registrera",
-      back: "Tillbaka",
-      errorEmail: "Vänligen ange en giltig e-postadress",
-      errorPassword: "Lösenordet måste innehålla minst 8 tecken",
-      loginSuccess: "Inloggning lyckades",
-    },
-
-    // Register Page
-    register: {
-      title: "Skapa ett konto",
-      description:
-        "Ange din e-post och lösenord för att skapa ditt konto",
-      email: "E-post",
-      emailPlaceholder: "hej@exempel.se",
-      password: "Lösenord",
-      button: "Registrera",
-      haveAccount: "Har du redan ett konto?",
-      login: "Logga in",
-      back: "Tillbaka",
-      errorEmail: "Vänligen ange en giltig e-postadress",
-      errorPassword: "Lösenordet måste innehålla minst 8 tecken",
-      verificationSent: "Verifieringsmail skickat. Kontrollera din postlåda.",
-    },
-
-    // Email Verification
-    emailVerify: {
-      title: "Kontrollera din e-post",
-      description:
-        "Klicka på länken i e-postmeddelandet vi skickade till dig för att bekräfta din e-postadress.",
-    },
-
-    // Confirm Signup Page
-    confirmSignup: {
-      badge: "Verifiera din e-post",
-      title: "Kontrollera din e-post",
-      description:
-        "Vi har skickat en bekräftelselänk till din e-postadress. Klicka på länken för att verifiera ditt konto och kom igång.",
-      backToLogin: "Tillbaka till inloggning",
-      openEmail: "Öppna e-post",
-      didntReceive: "Fick du inte e-postmeddelandet?",
-      tryAgain: "Försök igen",
-    },
-
-    // Profile Page
-    profile: {
-      title: "Profilsida",
-      email: "E-post",
-      loading: "Laddar...",
-    },
-
-    // 404 Not Found Page
-    notFound: {
-      title: "Sida hittades inte",
-      heading: "404",
-      description: "Tyvärr finns inte sidan du letar efter.",
-      backHome: "Tillbaka till startsidan",
-    },
-
-    // Footer
-    footer: {
-      buildBy: "Byggd av",
-      sarath: "Sarath Adhithya",
-      github: "GitHub",
-      twitter: "Twitter",
-      linkedin: "LinkedIn",
-    },
-
-    // Theme Toggle
-    theme: {
-      light: "Ljus",
-      dark: "Mörk",
-      system: "System",
-      toggleTheme: "Växla tema",
-    },
-
-    // Language Selector
-    language: {
-      selectLanguage: "Språk",
-      spanish: "Español",
-      english: "English",
-      german: "Deutsch",
-      swedish: "Svenska",
-      danish: "Dansk",
-      french: "Français",
-      russian: "Русский",
-      hungarian: "Magyar",
-      portuguese: "Português",
-      italian: "Italiano",
-      romanian: "Română",
-    },
-  },
-
-  da: {
-    // Navigation
-    navbar: {
-      title: "Next Level Auth",
-      myAccount: "Min konto",
-      profile: "Profil",
-      logout: "Log ud",
-      login: "Log ind",
-      toggleTheme: "Skift tema",
-    },
-
-    // Home Page
-    home: {
-      badge: "Minimal skabelon med",
-      title:
-        "Next.js 14 Supabase Authentication Playground: Bygning af moderne webudlevelser sammen",
-      description:
-        "Udforsk verden af open source-kodning og sikker webudvikling. Hver linje kode er open source - Bidrag til fremtiden for webdesign med Supabase Authentication!",
-      getStarted: "Kom i gang",
-      github: "GitHub",
-      keyFeatures: "Vigtige funktioner",
-      openSource: "Helt open source",
-      openSourceDescription:
-        "Koden til dette projekt er helt open source og tilgængelig på GitHub. Gå med i fællesskabet og bidrag til fremtiden for webdesign!",
-      viewOnGithub: "Se på GitHub",
-    },
-
-    // Features
-    features: {
-      serverComponents: {
-        name: "Server-komponenter",
-        description:
-          "Udnyt styrken af server-komponenter til problemfri rendering og forbedret ydeevne.",
-      },
-      authentication: {
-        name: "Godkendelse",
-        description:
-          "Sikker din applikation med robust godkendelse leveret af Supabase Auth.",
+          "Proteggi la tua applicazione con l'autenticazione robusta fornita da Supabase Auth.",
       },
       openSource: {
         name: "Open source",
         description:
-          "Arbejd sammen med udviklere verden over for at forbedre og innovere, hvilket gør en varig indflydelse på projektet.",
+          "Collabora con sviluppatori di tutto il mondo per migliorare e innovare, avendo un impatto duraturo sul progetto.",
       },
       modernUI: {
-        name: "Moderne UI",
+        name: "Interfaccia moderna",
         description:
-          "Opret imponerende og responsive brugergrænseflader med de seneste designprincipper og praksis.",
+          "Crea interfacce utente straordinarie e reattive con i più recenti principi e pratiche di progettazione.",
       },
-      learnMore: "Lær mere",
+      learnMore: "Scopri di più",
     },
 
     // Login Page
     login: {
-      title: "Velkommen tilbage",
+      title: "Bentornato",
       description:
-        "Indtast din email og adgangskode for at logge ind på din konto",
-      email: "E-mail",
-      password: "Adgangskode",
-      button: "Log ind",
-      noAccount: "Har du ikke en konto?",
-      register: "Tilmeld",
-      back: "Tilbage",
-      errorEmail: "Indtast venligst en gyldig email-adresse",
-      errorPassword: "Adgangskoden skal være mindst 8 tegn",
-      loginSuccess: "Login var vellykket",
+        "Inserisci la tua email e la tua password per accedere al tuo account",
+      email: "Email",
+      password: "Password",
+      button: "Accedi",
+      noAccount: "Non hai un account?",
+      register: "Registrati",
+      back: "Indietro",
+      errorEmail: "Inserisci un'email valida",
+      errorPassword: "La password deve contenere almeno 8 caratteri",
+      loginSuccess: "Accesso riuscito",
     },
 
     // Register Page
     register: {
-      title: "Opret en konto",
+      title: "Crea un account",
       description:
-        "Indtast din email og adgangskode for at oprette din konto",
-      email: "E-mail",
-      emailPlaceholder: "hej@eksempel.dk",
-      password: "Adgangskode",
-      button: "Tilmeld",
-      haveAccount: "Har du allerede en konto?",
-      login: "Log ind",
-      back: "Tilbage",
-      errorEmail: "Indtast venligst en gyldig email-adresse",
-      errorPassword: "Adgangskoden skal være mindst 8 tegn",
-      verificationSent: "Verifikations-email sendt. Tjek din mail.",
+        "Inserisci la tua email e la tua password per creare il tuo account",
+      email: "Email",
+      emailPlaceholder: "ciao@esempio.it",
+      password: "Password",
+      button: "Registrati",
+      haveAccount: "Hai già un account?",
+      login: "Accedi",
+      back: "Indietro",
+      errorEmail: "Inserisci un'email valida",
+      errorPassword: "La password deve contenere almeno 8 caratteri",
+      verificationSent: "Email di verifica inviata. Controlla la tua casella di posta.",
     },
 
     // Email Verification
     emailVerify: {
-      title: "Tjek din email",
+      title: "Verifica la tua email",
       description:
-        "Klik på linket i den email, vi sendte til dig for at bekræfte din email-adresse.",
+        "Fai clic sul link nell'email che ti abbiamo inviato per confermare il tuo indirizzo email.",
     },
 
     // Confirm Signup Page
     confirmSignup: {
-      badge: "Bekræft din email",
-      title: "Tjek din email",
+      badge: "Verifica la tua email",
+      title: "Verifica la tua email",
       description:
-        "Vi har sendt et bekræftelseslink til din email-adresse. Klik på linket for at bekræfte din konto og komme i gang.",
-      backToLogin: "Tilbage til login",
-      openEmail: "Åben email",
-      didntReceive: "Modtog du ikke emailen?",
-      tryAgain: "Prøv igen",
+        "Abbiamo inviato un link di conferma al tuo indirizzo email. Fai clic sul link per verificare il tuo account e iniziare.",
+      backToLogin: "Torna al login",
+      openEmail: "Apri email",
+      didntReceive: "Non hai ricevuto l'email?",
+      tryAgain: "Riprova",
     },
 
     // Profile Page
     profile: {
-      title: "Profilside",
-      email: "E-mail",
-      loading: "Indlæser...",
-    },
-
-    // 404 Not Found Page
-    notFound: {
-      title: "Side ikke fundet",
-      heading: "404",
-      description: "Desværre findes siden, du søger efter, ikke.",
-      backHome: "Tilbage til startsiden",
+      title: "Pagina del profilo",
+      email: "Email",
+      loading: "Caricamento...",
     },
 
     // Footer
     footer: {
-      buildBy: "Bygget af",
+      buildBy: "Costruito da",
       sarath: "Sarath Adhithya",
       github: "GitHub",
       twitter: "Twitter",
@@ -740,15 +576,15 @@ export const translations = {
 
     // Theme Toggle
     theme: {
-      light: "Lys",
-      dark: "Mørk",
-      system: "System",
-      toggleTheme: "Skift tema",
+      light: "Chiaro",
+      dark: "Scuro",
+      system: "Sistema",
+      toggleTheme: "Cambia tema",
     },
 
     // Language Selector
     language: {
-      selectLanguage: "Sproget",
+      selectLanguage: "Lingua",
       spanish: "Español",
       english: "English",
       german: "Deutsch",
@@ -762,7 +598,6 @@ export const translations = {
       romanian: "Română",
     },
   },
-
   fr: {
     // Navigation
     navbar: {
@@ -915,129 +750,120 @@ export const translations = {
       romanian: "Română",
     },
   },
-
-  ru: {
+  pt: {
     // Navigation
     navbar: {
       title: "Next Level Auth",
-      myAccount: "Мой Аккаунт",
-      profile: "Профиль",
-      logout: "Выход",
-      login: "Вход",
-      toggleTheme: "Переключить тему",
+      myAccount: "Minha Conta",
+      profile: "Perfil",
+      logout: "Sair",
+      login: "Entrar",
+      toggleTheme: "Alternar tema",
     },
 
     // Home Page
     home: {
-      badge: "Минимальный шаблон с",
+      badge: "Modelo minimalista com",
       title:
-        "Next.js 14 Supabase Authentication Playground: Создание современных веб-опытов вместе",
+        "Next.js 14 Supabase Authentication Playground: Construindo experiências web modernas juntos",
       description:
-        "Исследуйте мир открытого исходного кода и безопасной веб-разработки. Каждая строка кода - это открытый исходный код - Присоединяйтесь к будущему веб-разработки с помощью Supabase Authentication!",
-      getStarted: "Начать",
+        "Explore o mundo da codificação de código aberto e do desenvolvimento web seguro. Cada linha de código é código aberto - Contribua para o futuro do desenvolvimento web com Supabase Authentication!",
+      getStarted: "Começar",
       github: "GitHub",
-      keyFeatures: "Ключевые особенности",
-      openSource: "Полностью открытый исходный код",
+      keyFeatures: "Principais características",
+      openSource: "Totalmente código aberto",
       openSourceDescription:
-        "Код этого проекта полностью открыт и доступен на GitHub. Присоединитесь к сообществу и внесите вклад в будущее веб-разработки!",
-      viewOnGithub: "Посмотреть на GitHub",
+        "O código deste projeto é totalmente código aberto e disponível no GitHub. Junte-se à comunidade e contribua para o futuro do desenvolvimento web!",
+      viewOnGithub: "Ver no GitHub",
     },
 
     // Features
     features: {
       serverComponents: {
-        name: "Серверные компоненты",
+        name: "Componentes do servidor",
         description:
-          "Используйте мощь серверных компонентов для бесшовного рендеринга и улучшенной производительности.",
+          "Aproveite o poder dos componentes do servidor para renderização perfeita e melhor desempenho.",
       },
       authentication: {
-        name: "Аутентификация",
+        name: "Autenticação",
         description:
-          "Защитите свое приложение надежной аутентификацией Supabase Auth.",
+          "Proteja seu aplicativo com a autenticação robusta fornecida pelo Supabase Auth.",
       },
       openSource: {
-        name: "Открытый исходный код",
+        name: "Código aberto",
         description:
-          "Сотрудничайте с разработчиками со всего мира, чтобы улучшать и инновировать, оказывая долгосрочное влияние на проект.",
+          "Colabore com desenvolvedores de todo o mundo para melhorar e inovar, deixando um impacto duradouro no projeto.",
       },
       modernUI: {
-        name: "Современный интерфейс",
+        name: "Interface moderna",
         description:
-          "Создавайте потрясающие и адаптивные пользовательские интерфейсы с использованием новейших принципов и практик дизайна.",
+          "Crie interfaces de usuário impressionantes e responsivas com os mais recentes princípios e práticas de design.",
       },
-      learnMore: "Узнать больше",
+      learnMore: "Saiba mais",
     },
 
     // Login Page
     login: {
-      title: "Добро пожаловать обратно",
+      title: "Bem-vindo de volta",
       description:
-        "Введите вашу почту и пароль, чтобы войти в вашу учетную запись",
-      email: "Электронная почта",
-      password: "Пароль",
-      button: "Вход",
-      noAccount: "Нет аккаунта?",
-      register: "Зарегистрироваться",
-      back: "Назад",
-      errorEmail: "Пожалуйста, введите действительный адрес электронной почты",
-      errorPassword: "Пароль должен содержать минимум 8 символов",
-      loginSuccess: "Вход выполнен успешно",
+        "Digite seu email e senha para fazer login em sua conta",
+      email: "Email",
+      password: "Senha",
+      button: "Entrar",
+      noAccount: "Não tem uma conta?",
+      register: "Registrar",
+      back: "Voltar",
+      errorEmail: "Por favor, digite um email válido",
+      errorPassword: "A senha deve ter pelo menos 8 caracteres",
+      loginSuccess: "Login bem-sucedido",
     },
 
     // Register Page
     register: {
-      title: "Создать учетную запись",
+      title: "Criar uma conta",
       description:
-        "Введите вашу почту и пароль, чтобы создать учетную запись",
-      email: "Электронная почта",
-      emailPlaceholder: "привет@пример.ru",
-      password: "Пароль",
-      button: "Зарегистрироваться",
-      haveAccount: "Уже есть учетная запись?",
-      login: "Вход",
-      back: "Назад",
-      errorEmail: "Пожалуйста, введите действительный адрес электронной почты",
-      errorPassword: "Пароль должен содержать минимум 8 символов",
-      verificationSent: "Письмо с подтверждением отправлено. Проверьте почту.",
+        "Digite seu email e senha para criar sua conta",
+      email: "Email",
+      emailPlaceholder: "ola@exemplo.com",
+      password: "Senha",
+      button: "Registrar",
+      haveAccount: "Já tem uma conta?",
+      login: "Entrar",
+      back: "Voltar",
+      errorEmail: "Por favor, digite um email válido",
+      errorPassword: "A senha deve ter pelo menos 8 caracteres",
+      verificationSent: "Email de verificação enviado. Verifique sua caixa de correio.",
     },
 
     // Email Verification
     emailVerify: {
-      title: "Проверьте свою почту",
+      title: "Verifique seu email",
       description:
-        "Нажмите на ссылку в письме, которое мы вам отправили, чтобы подтвердить ваш адрес электронной почты.",
+        "Clique no link no email que enviamos para você para confirmar seu endereço de email.",
     },
 
     // Confirm Signup Page
     confirmSignup: {
-      badge: "Подтвердите свою почту",
-      title: "Проверьте свою почту",
+      badge: "Verifique seu email",
+      title: "Verifique seu email",
       description:
-        "Мы отправили ссылку подтверждения на ваш адрес электронной почты. Нажмите на ссылку, чтобы подтвердить вашу учетную запись и начать работу.",
-      backToLogin: "Вернуться к входу",
-      openEmail: "Открыть письмо",
-      didntReceive: "Не получили письмо?",
-      tryAgain: "Попробовать еще раз",
+        "Enviamos um link de confirmação para seu endereço de email. Clique no link para verificar sua conta e começar.",
+      backToLogin: "Voltar para login",
+      openEmail: "Abrir email",
+      didntReceive: "Não recebeu o email?",
+      tryAgain: "Tentar novamente",
     },
 
     // Profile Page
     profile: {
-      title: "Страница профиля",
-      email: "Электронная почта",
-      loading: "Загрузка...",
-    },
-
-    // 404 Not Found Page
-    notFound: {
-      title: "Страница не найдена",
-      heading: "404",
-      description: "К сожалению, страница, которую вы ищете, не существует.",
-      backHome: "Вернуться на главную",
+      title: "Página de perfil",
+      email: "Email",
+      loading: "Carregando...",
     },
 
     // Footer
     footer: {
-      buildBy: "Создано",
+      buildBy: "Construído por",
       sarath: "Sarath Adhithya",
       github: "GitHub",
       twitter: "Twitter",
@@ -1046,15 +872,15 @@ export const translations = {
 
     // Theme Toggle
     theme: {
-      light: "Светлый",
-      dark: "Темный",
-      system: "Система",
-      toggleTheme: "Переключить тему",
+      light: "Claro",
+      dark: "Escuro",
+      system: "Sistema",
+      toggleTheme: "Alternar tema",
     },
 
     // Language Selector
     language: {
-      selectLanguage: "Язык",
+      selectLanguage: "Idioma",
       spanish: "Español",
       english: "English",
       german: "Deutsch",
@@ -1068,7 +894,6 @@ export const translations = {
       romanian: "Română",
     },
   },
-
   hu: {
     // Navigation
     navbar: {
@@ -1221,121 +1046,128 @@ export const translations = {
       romanian: "Română",
     },
   },
-
-  pt: {
+  sv: {
     // Navigation
     navbar: {
       title: "Next Level Auth",
-      myAccount: "Minha Conta",
-      profile: "Perfil",
-      logout: "Sair",
-      login: "Entrar",
-      toggleTheme: "Alternar tema",
+      myAccount: "Mitt Konto",
+      profile: "Profil",
+      logout: "Logga ut",
+      login: "Logga in",
+      toggleTheme: "Växla tema",
     },
 
     // Home Page
     home: {
-      badge: "Modelo minimalista com",
+      badge: "Minimal mall med",
       title:
-        "Next.js 14 Supabase Authentication Playground: Construindo experiências web modernas juntos",
+        "Next.js 14 Supabase Authentication Playground: Bygga moderna webbupplevelser tillsammans",
       description:
-        "Explore o mundo da codificação de código aberto e do desenvolvimento web seguro. Cada linha de código é código aberto - Contribua para o futuro do desenvolvimento web com Supabase Authentication!",
-      getStarted: "Começar",
+        "Utforska världen av öppen källkod och säker webbutveckling. Varje rad kod är öppen källkod - Bidra till framtiden för webbutveckling med Supabase Authentication!",
+      getStarted: "Kom igång",
       github: "GitHub",
-      keyFeatures: "Principais características",
-      openSource: "Totalmente código aberto",
+      keyFeatures: "Viktiga funktioner",
+      openSource: "Helt öppen källkod",
       openSourceDescription:
-        "O código deste projeto é totalmente código aberto e disponível no GitHub. Junte-se à comunidade e contribua para o futuro do desenvolvimento web!",
-      viewOnGithub: "Ver no GitHub",
+        "Koden för detta projekt är helt öppen källkod och tillgänglig på GitHub. Gå med i communityn och bidra till framtiden för webbutveckling!",
+      viewOnGithub: "Visa på GitHub",
     },
 
     // Features
     features: {
       serverComponents: {
-        name: "Componentes do servidor",
+        name: "Serverkomponenter",
         description:
-          "Aproveite o poder dos componentes do servidor para renderização perfeita e melhor desempenho.",
+          "Utnyttja kraften hos serverkomponenter för sömlös rendering och förbättrad prestanda.",
       },
       authentication: {
-        name: "Autenticação",
+        name: "Autentisering",
         description:
-          "Proteja seu aplicativo com a autenticação robusta fornecida pelo Supabase Auth.",
+          "Säkra din tillämpning med robust autentisering tillhandahållen av Supabase Auth.",
       },
       openSource: {
-        name: "Código aberto",
+        name: "Öppen källkod",
         description:
-          "Colabore com desenvolvedores de todo o mundo para melhorar e inovar, deixando um impacto duradouro no projeto.",
+          "Samarbeta med utvecklare världen över för att förbättra och förnya, vilket gör en varaktig inverkan på projektet.",
       },
       modernUI: {
-        name: "Interface moderna",
+        name: "Modern UI",
         description:
-          "Crie interfaces de usuário impressionantes e responsivas com os mais recentes princípios e práticas de design.",
+          "Skapa fantastiska och responsiva användargränssnitt med de senaste designprinciperna och metoderna.",
       },
-      learnMore: "Saiba mais",
+      learnMore: "Lär dig mer",
     },
 
     // Login Page
     login: {
-      title: "Bem-vindo de volta",
+      title: "Välkommen tillbaka",
       description:
-        "Digite seu email e senha para fazer login em sua conta",
-      email: "Email",
-      password: "Senha",
-      button: "Entrar",
-      noAccount: "Não tem uma conta?",
-      register: "Registrar",
-      back: "Voltar",
-      errorEmail: "Por favor, digite um email válido",
-      errorPassword: "A senha deve ter pelo menos 8 caracteres",
-      loginSuccess: "Login bem-sucedido",
+        "Ange din e-post och lösenord för att logga in på ditt konto",
+      email: "E-post",
+      password: "Lösenord",
+      button: "Logga in",
+      noAccount: "Har du inget konto?",
+      register: "Registrera",
+      back: "Tillbaka",
+      errorEmail: "Vänligen ange en giltig e-postadress",
+      errorPassword: "Lösenordet måste innehålla minst 8 tecken",
+      loginSuccess: "Inloggning lyckades",
     },
 
     // Register Page
     register: {
-      title: "Criar uma conta",
+      title: "Skapa ett konto",
       description:
-        "Digite seu email e senha para criar sua conta",
-      email: "Email",
-      emailPlaceholder: "ola@exemplo.com",
-      password: "Senha",
-      button: "Registrar",
-      haveAccount: "Já tem uma conta?",
-      login: "Entrar",
-      back: "Voltar",
-      errorEmail: "Por favor, digite um email válido",
-      errorPassword: "A senha deve ter pelo menos 8 caracteres",
-      verificationSent: "Email de verificação enviado. Verifique sua caixa de correio.",
+        "Ange din e-post och lösenord för att skapa ditt konto",
+      email: "E-post",
+      emailPlaceholder: "hej@exempel.se",
+      password: "Lösenord",
+      button: "Registrera",
+      haveAccount: "Har du redan ett konto?",
+      login: "Logga in",
+      back: "Tillbaka",
+      errorEmail: "Vänligen ange en giltig e-postadress",
+      errorPassword: "Lösenordet måste innehålla minst 8 tecken",
+      verificationSent: "Verifieringsmail skickat. Kontrollera din postlåda.",
     },
 
     // Email Verification
     emailVerify: {
-      title: "Verifique seu email",
+      title: "Kontrollera din e-post",
       description:
-        "Clique no link no email que enviamos para você para confirmar seu endereço de email.",
+        "Klicka på länken i e-postmeddelandet vi skickade till dig för att bekräfta din e-postadress.",
     },
 
     // Confirm Signup Page
     confirmSignup: {
-      badge: "Verifique seu email",
-      title: "Verifique seu email",
+      badge: "Verifiera din e-post",
+      title: "Kontrollera din e-post",
       description:
-        "Enviamos um link de confirmação para seu endereço de email. Clique no link para verificar sua conta e começar.",
-      backToLogin: "Voltar para login",
-      openEmail: "Abrir email",
-      didntReceive: "Não recebeu o email?",
-      tryAgain: "Tentar novamente",
+        "Vi har skickat en bekräftelselänk till din e-postadress. Klicka på länken för att verifiera ditt konto och kom igång.",
+      backToLogin: "Tillbaka till inloggning",
+      openEmail: "Öppna e-post",
+      didntReceive: "Fick du inte e-postmeddelandet?",
+      tryAgain: "Försök igen",
     },
 
     // Profile Page
     profile: {
-      title: "Página de perfil",
-      email: "Email",
-      loading: "Carregando...",
+      title: "Profilsida",
+      email: "E-post",
+      loading: "Laddar...",
+    },
+
+    // 404 Not Found Page
+    notFound: {
+      title: "Sida hittades inte",
+      heading: "404",
+      description: "Tyvärr finns inte sidan du letar efter.",
+      backHome: "Tillbaka till startsidan",
     },
 
     // Footer
     footer: {
-      buildBy: "Construído por",
+      buildBy: "Byggd av",
       sarath: "Sarath Adhithya",
       github: "GitHub",
       twitter: "Twitter",
@@ -1344,15 +1176,15 @@ export const translations = {
 
     // Theme Toggle
     theme: {
-      light: "Claro",
-      dark: "Escuro",
-      system: "Sistema",
-      toggleTheme: "Alternar tema",
+      light: "Ljus",
+      dark: "Mörk",
+      system: "System",
+      toggleTheme: "Växla tema",
     },
 
     // Language Selector
     language: {
-      selectLanguage: "Idioma",
+      selectLanguage: "Språk",
       spanish: "Español",
       english: "English",
       german: "Deutsch",
@@ -1366,121 +1198,128 @@ export const translations = {
       romanian: "Română",
     },
   },
-
-  it: {
+  da: {
     // Navigation
     navbar: {
       title: "Next Level Auth",
-      myAccount: "Il mio account",
-      profile: "Profilo",
-      logout: "Esci",
-      login: "Accedi",
-      toggleTheme: "Cambia tema",
+      myAccount: "Min konto",
+      profile: "Profil",
+      logout: "Log ud",
+      login: "Log ind",
+      toggleTheme: "Skift tema",
     },
 
     // Home Page
     home: {
-      badge: "Modello minimalista con",
+      badge: "Minimal skabelon med",
       title:
-        "Next.js 14 Supabase Authentication Playground: Costruire esperienze web moderne insieme",
+        "Next.js 14 Supabase Authentication Playground: Bygning af moderne webudlevelser sammen",
       description:
-        "Esplora il mondo della codifica open source e dello sviluppo web sicuro. Ogni riga di codice è open source - Contribuisci al futuro dello sviluppo web con Supabase Authentication!",
-      getStarted: "Inizia",
+        "Udforsk verden af open source-kodning og sikker webudvikling. Hver linje kode er open source - Bidrag til fremtiden for webdesign med Supabase Authentication!",
+      getStarted: "Kom i gang",
       github: "GitHub",
-      keyFeatures: "Caratteristiche principali",
-      openSource: "Completamente open source",
+      keyFeatures: "Vigtige funktioner",
+      openSource: "Helt open source",
       openSourceDescription:
-        "Il codice di questo progetto è completamente open source e disponibile su GitHub. Unisciti alla comunità e contribuisci al futuro dello sviluppo web!",
-      viewOnGithub: "Visualizza su GitHub",
+        "Koden til dette projekt er helt open source og tilgængelig på GitHub. Gå med i fællesskabet og bidrag til fremtiden for webdesign!",
+      viewOnGithub: "Se på GitHub",
     },
 
     // Features
     features: {
       serverComponents: {
-        name: "Componenti server",
+        name: "Server-komponenter",
         description:
-          "Sfrutta la potenza dei componenti server per il rendering senza interruzioni e prestazioni migliorate.",
+          "Udnyt styrken af server-komponenter til problemfri rendering og forbedret ydeevne.",
       },
       authentication: {
-        name: "Autenticazione",
+        name: "Godkendelse",
         description:
-          "Proteggi la tua applicazione con l'autenticazione robusta fornita da Supabase Auth.",
+          "Sikker din applikation med robust godkendelse leveret af Supabase Auth.",
       },
       openSource: {
         name: "Open source",
         description:
-          "Collabora con sviluppatori di tutto il mondo per migliorare e innovare, avendo un impatto duraturo sul progetto.",
+          "Arbejd sammen med udviklere verden over for at forbedre og innovere, hvilket gør en varig indflydelse på projektet.",
       },
       modernUI: {
-        name: "Interfaccia moderna",
+        name: "Moderne UI",
         description:
-          "Crea interfacce utente straordinarie e reattive con i più recenti principi e pratiche di progettazione.",
+          "Opret imponerende og responsive brugergrænseflader med de seneste designprincipper og praksis.",
       },
-      learnMore: "Scopri di più",
+      learnMore: "Lær mere",
     },
 
     // Login Page
     login: {
-      title: "Bentornato",
+      title: "Velkommen tilbage",
       description:
-        "Inserisci la tua email e la tua password per accedere al tuo account",
-      email: "Email",
-      password: "Password",
-      button: "Accedi",
-      noAccount: "Non hai un account?",
-      register: "Registrati",
-      back: "Indietro",
-      errorEmail: "Inserisci un'email valida",
-      errorPassword: "La password deve contenere almeno 8 caratteri",
-      loginSuccess: "Accesso riuscito",
+        "Indtast din email og adgangskode for at logge ind på din konto",
+      email: "E-mail",
+      password: "Adgangskode",
+      button: "Log ind",
+      noAccount: "Har du ikke en konto?",
+      register: "Tilmeld",
+      back: "Tilbage",
+      errorEmail: "Indtast venligst en gyldig email-adresse",
+      errorPassword: "Adgangskoden skal være mindst 8 tegn",
+      loginSuccess: "Login var vellykket",
     },
 
     // Register Page
     register: {
-      title: "Crea un account",
+      title: "Opret en konto",
       description:
-        "Inserisci la tua email e la tua password per creare il tuo account",
-      email: "Email",
-      emailPlaceholder: "ciao@esempio.it",
-      password: "Password",
-      button: "Registrati",
-      haveAccount: "Hai già un account?",
-      login: "Accedi",
-      back: "Indietro",
-      errorEmail: "Inserisci un'email valida",
-      errorPassword: "La password deve contenere almeno 8 caratteri",
-      verificationSent: "Email di verifica inviata. Controlla la tua casella di posta.",
+        "Indtast din email og adgangskode for at oprette din konto",
+      email: "E-mail",
+      emailPlaceholder: "hej@eksempel.dk",
+      password: "Adgangskode",
+      button: "Tilmeld",
+      haveAccount: "Har du allerede en konto?",
+      login: "Log ind",
+      back: "Tilbage",
+      errorEmail: "Indtast venligst en gyldig email-adresse",
+      errorPassword: "Adgangskoden skal være mindst 8 tegn",
+      verificationSent: "Verifikations-email sendt. Tjek din mail.",
     },
 
     // Email Verification
     emailVerify: {
-      title: "Verifica la tua email",
+      title: "Tjek din email",
       description:
-        "Fai clic sul link nell'email che ti abbiamo inviato per confermare il tuo indirizzo email.",
+        "Klik på linket i den email, vi sendte til dig for at bekræfte din email-adresse.",
     },
 
     // Confirm Signup Page
     confirmSignup: {
-      badge: "Verifica la tua email",
-      title: "Verifica la tua email",
+      badge: "Bekræft din email",
+      title: "Tjek din email",
       description:
-        "Abbiamo inviato un link di conferma al tuo indirizzo email. Fai clic sul link per verificare il tuo account e iniziare.",
-      backToLogin: "Torna al login",
-      openEmail: "Apri email",
-      didntReceive: "Non hai ricevuto l'email?",
-      tryAgain: "Riprova",
+        "Vi har sendt et bekræftelseslink til din email-adresse. Klik på linket for at bekræfte din konto og komme i gang.",
+      backToLogin: "Tilbage til login",
+      openEmail: "Åben email",
+      didntReceive: "Modtog du ikke emailen?",
+      tryAgain: "Prøv igen",
     },
 
     // Profile Page
     profile: {
-      title: "Pagina del profilo",
-      email: "Email",
-      loading: "Caricamento...",
+      title: "Profilside",
+      email: "E-mail",
+      loading: "Indlæser...",
+    },
+
+    // 404 Not Found Page
+    notFound: {
+      title: "Side ikke fundet",
+      heading: "404",
+      description: "Desværre findes siden, du søger efter, ikke.",
+      backHome: "Tilbage til startsiden",
     },
 
     // Footer
     footer: {
-      buildBy: "Costruito da",
+      buildBy: "Bygget af",
       sarath: "Sarath Adhithya",
       github: "GitHub",
       twitter: "Twitter",
@@ -1489,15 +1328,15 @@ export const translations = {
 
     // Theme Toggle
     theme: {
-      light: "Chiaro",
-      dark: "Scuro",
-      system: "Sistema",
-      toggleTheme: "Cambia tema",
+      light: "Lys",
+      dark: "Mørk",
+      system: "System",
+      toggleTheme: "Skift tema",
     },
 
     // Language Selector
     language: {
-      selectLanguage: "Lingua",
+      selectLanguage: "Sproget",
       spanish: "Español",
       english: "English",
       german: "Deutsch",
@@ -1511,7 +1350,158 @@ export const translations = {
       romanian: "Română",
     },
   },
+  ru: {
+    // Navigation
+    navbar: {
+      title: "Next Level Auth",
+      myAccount: "Мой Аккаунт",
+      profile: "Профиль",
+      logout: "Выход",
+      login: "Вход",
+      toggleTheme: "Переключить тему",
+    },
 
+    // Home Page
+    home: {
+      badge: "Минимальный шаблон с",
+      title:
+        "Next.js 14 Supabase Authentication Playground: Создание современных веб-опытов вместе",
+      description:
+        "Исследуйте мир открытого исходного кода и безопасной веб-разработки. Каждая строка кода - это открытый исходный код - Присоединяйтесь к будущему веб-разработки с помощью Supabase Authentication!",
+      getStarted: "Начать",
+      github: "GitHub",
+      keyFeatures: "Ключевые особенности",
+      openSource: "Полностью открытый исходный код",
+      openSourceDescription:
+        "Код этого проекта полностью открыт и доступен на GitHub. Присоединитесь к сообществу и внесите вклад в будущее веб-разработки!",
+      viewOnGithub: "Посмотреть на GitHub",
+    },
+
+    // Features
+    features: {
+      serverComponents: {
+        name: "Серверные компоненты",
+        description:
+          "Используйте мощь серверных компонентов для бесшовного рендеринга и улучшенной производительности.",
+      },
+      authentication: {
+        name: "Аутентификация",
+        description:
+          "Защитите свое приложение надежной аутентификацией Supabase Auth.",
+      },
+      openSource: {
+        name: "Открытый исходный код",
+        description:
+          "Сотрудничайте с разработчиками со всего мира, чтобы улучшать и инновировать, оказывая долгосрочное влияние на проект.",
+      },
+      modernUI: {
+        name: "Современный интерфейс",
+        description:
+          "Создавайте потрясающие и адаптивные пользовательские интерфейсы с использованием новейших принципов и практик дизайна.",
+      },
+      learnMore: "Узнать больше",
+    },
+
+    // Login Page
+    login: {
+      title: "Добро пожаловать обратно",
+      description:
+        "Введите вашу почту и пароль, чтобы войти в вашу учетную запись",
+      email: "Электронная почта",
+      password: "Пароль",
+      button: "Вход",
+      noAccount: "Нет аккаунта?",
+      register: "Зарегистрироваться",
+      back: "Назад",
+      errorEmail: "Пожалуйста, введите действительный адрес электронной почты",
+      errorPassword: "Пароль должен содержать минимум 8 символов",
+      loginSuccess: "Вход выполнен успешно",
+    },
+
+    // Register Page
+    register: {
+      title: "Создать учетную запись",
+      description:
+        "Введите вашу почту и пароль, чтобы создать учетную запись",
+      email: "Электронная почта",
+      emailPlaceholder: "привет@пример.ru",
+      password: "Пароль",
+      button: "Зарегистрироваться",
+      haveAccount: "Уже есть учетная запись?",
+      login: "Вход",
+      back: "Назад",
+      errorEmail: "Пожалуйста, введите действительный адрес электронной почты",
+      errorPassword: "Пароль должен содержать минимум 8 символов",
+      verificationSent: "Письмо с подтверждением отправлено. Проверьте почту.",
+    },
+
+    // Email Verification
+    emailVerify: {
+      title: "Проверьте свою почту",
+      description:
+        "Нажмите на ссылку в письме, которое мы вам отправили, чтобы подтвердить ваш адрес электронной почты.",
+    },
+
+    // Confirm Signup Page
+    confirmSignup: {
+      badge: "Подтвердите свою почту",
+      title: "Проверьте свою почту",
+      description:
+        "Мы отправили ссылку подтверждения на ваш адрес электронной почты. Нажмите на ссылку, чтобы подтвердить вашу учетную запись и начать работу.",
+      backToLogin: "Вернуться к входу",
+      openEmail: "Открыть письмо",
+      didntReceive: "Не получили письмо?",
+      tryAgain: "Попробовать еще раз",
+    },
+
+    // Profile Page
+    profile: {
+      title: "Страница профиля",
+      email: "Электронная почта",
+      loading: "Загрузка...",
+    },
+
+    // 404 Not Found Page
+    notFound: {
+      title: "Страница не найдена",
+      heading: "404",
+      description: "К сожалению, страница, которую вы ищете, не существует.",
+      backHome: "Вернуться на главную",
+    },
+
+    // Footer
+    footer: {
+      buildBy: "Создано",
+      sarath: "Sarath Adhithya",
+      github: "GitHub",
+      twitter: "Twitter",
+      linkedin: "LinkedIn",
+    },
+
+    // Theme Toggle
+    theme: {
+      light: "Светлый",
+      dark: "Темный",
+      system: "Система",
+      toggleTheme: "Переключить тему",
+    },
+
+    // Language Selector
+    language: {
+      selectLanguage: "Язык",
+      spanish: "Español",
+      english: "English",
+      german: "Deutsch",
+      swedish: "Svenska",
+      danish: "Dansk",
+      french: "Français",
+      russian: "Русский",
+      hungarian: "Magyar",
+      portuguese: "Português",
+      italian: "Italiano",
+      romanian: "Română",
+    },
+  },
   ro: {
     // Navigation
     navbar: {
@@ -1655,7 +1645,7 @@ export const translations = {
       italian: "Italiano",
       romanian: "Română",
     },
-  },
+  }
 };
 
-export type Language = "es" | "en" | "de" | "sv" | "da" | "fr" | "ru" | "hu" | "pt" | "it" | "ro";
+export type Language = "es" | "en" | "de" | "it" | "fr" | "pt" | "hu" | "sv" | "da" | "ru" | "ro";
