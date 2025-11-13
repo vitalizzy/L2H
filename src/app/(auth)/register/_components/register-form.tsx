@@ -39,10 +39,14 @@ const RegisterForm = () => {
   });
 
   async function handleRegister(values: RegisterValuesType) {
+    const redirectUrl = typeof window !== "undefined" 
+      ? window.location.origin 
+      : process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+
     const { error, data } = await supabase.auth.signUp({
       ...values,
       options: {
-        emailRedirectTo: `${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/callback`,
+        emailRedirectTo: `${redirectUrl}/auth/callback`,
       },
     });
 
@@ -52,7 +56,7 @@ const RegisterForm = () => {
 
     toast.success(t.register.verificationSent);
 
-    router.replace("/email-verify");
+    router.replace("/confirm-signup");
   }
 
   async function handleGoogleRegister() {

@@ -24,8 +24,15 @@ export async function GET(request: NextRequest) {
     console.log("OAuth callback - error:", error);
     console.log("OAuth callback - data:", data);
     
-    if (!error) {
+    if (!error && data?.user) {
+      // Google OAuth users have pre-verified emails from Google
+      // No additional email verification needed for OAuth providers
+      console.log("OAuth user authenticated:", data.user.email);
       return NextResponse.redirect(redirectTo);
+    }
+    
+    if (error) {
+      console.error("OAuth exchange failed:", error.message);
     }
   }
 
