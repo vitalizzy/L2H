@@ -29,7 +29,14 @@ export async function GET(request: NextRequest) {
 
     if (!error && data?.user) {
       console.log("Magic link verified for user:", data.user.email);
-      redirectTo.pathname = "/";
+      
+      // Check if this is a new user (signup email verification)
+      // If type is 'signup', user is new, go to onboarding
+      if (type === "signup") {
+        redirectTo.pathname = "/onboarding";
+      } else {
+        redirectTo.pathname = "/";
+      }
       redirectTo.searchParams.delete("next");
       return NextResponse.redirect(redirectTo);
     }

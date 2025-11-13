@@ -94,6 +94,15 @@ const LoginForm = () => {
           required
         />
 
+        <div className="flex justify-end">
+          <a
+            href="/forgot-password"
+            className="text-xs text-muted-foreground hover:text-foreground underline underline-offset-2"
+          >
+            ¿Olvidaste tu contraseña?
+          </a>
+        </div>
+
         <Button>{t.login.button}</Button>
 
         <div className="relative my-4">
