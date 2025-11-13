@@ -7,7 +7,7 @@ export async function GET(request: NextRequest) {
   const code = searchParams.get("code");
   const token_hash = searchParams.get("token_hash");
   const type = searchParams.get("type") as EmailOtpType | null;
-  const method = searchParams.get("method"); // 'google' for OAuth signup
+  const signup = searchParams.get("signup"); // 'true' if coming from signup page
   const next = searchParams.get("next") ?? "/";
 
   const redirectTo = request.nextUrl.clone();
@@ -15,7 +15,29 @@ export async function GET(request: NextRequest) {
   redirectTo.searchParams.delete("token_hash");
   redirectTo.searchParams.delete("type");
   redirectTo.searchParams.delete("code");
-  redirectTo.searchParams.delete("method");
+  redirectTo.searchParams.delete("signup");
+
+  // Handle magic link verification (from email)
+  if (token_hash && type) {
+    const supabase = await createClient();
+    console.log("Magic link verification - token_hash:", token_hash, "type:", type);
+
+    const { error, data } = await supabase.auth.verifyOtp({
+      type,
+      token_hash,
+    });
+
+    if (!error && data?.user) {
+      console.log("Magic link verified for user:", data.user.email);
+      redirectTo.pathname = "/";
+      redirectTo.searchParams.delete("next");
+      return NextResponse.redirect(redirectTo);
+    }
+
+    if (error) {
+      console.error("Magic link verification failed:", error.message);
+    }
+  }
 
   // Handle OAuth callback (Google, etc.)
   if (code) {
@@ -25,35 +47,21 @@ export async function GET(request: NextRequest) {
     console.log("OAuth callback - code:", code);
     console.log("OAuth callback - error:", error);
     console.log("OAuth callback - data:", data);
-    console.log("OAuth method:", method);
+    console.log("OAuth signup flag:", signup);
     
     if (!error && data?.user) {
       const userEmail = data.user.email;
       console.log("OAuth user authenticated:", userEmail);
       
-      // For Google OAuth signup (method=google), send verification email
-      if (method === "google" && userEmail) {
-        try {
-          // Send OTP to the user's email for verification
-          const { error: otpError } = await supabase.auth.signInWithOtp({
-            email: userEmail,
-            options: {
-              shouldCreateUser: false,
-              emailRedirectTo: `${request.nextUrl.origin}/auth/callback`,
-            },
-          });
-          
-          if (!otpError) {
-            console.log("Verification email sent to Google user:", userEmail);
-            // Redirect to confirm-signup page
-            redirectTo.pathname = "/confirm-signup";
-            return NextResponse.redirect(redirectTo);
-          } else {
-            console.log("Failed to send verification email:", otpError.message);
-          }
-        } catch (emailError) {
-          console.error("Error sending verification email:", emailError);
-        }
+      // If signup parameter is true, this is a new registration
+      // Redirect to confirm-signup for email verification
+      if (signup === "true") {
+        console.log("New user signup via OAuth");
+        redirectTo.pathname = "/confirm-signup";
+      } else {
+        // Existing user login - redirect to home
+        console.log("Existing user login via OAuth");
+        redirectTo.pathname = "/";
       }
       
       return NextResponse.redirect(redirectTo);
@@ -61,20 +69,6 @@ export async function GET(request: NextRequest) {
     
     if (error) {
       console.error("OAuth exchange failed:", error.message);
-    }
-  }
-
-  // Handle email verification
-  if (token_hash && type) {
-    const supabase = await createClient();
-
-    const { error } = await supabase.auth.verifyOtp({
-      type,
-      token_hash,
-    });
-    if (!error) {
-      redirectTo.searchParams.delete("next");
-      return NextResponse.redirect(redirectTo);
     }
   }
 
