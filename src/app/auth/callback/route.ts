@@ -53,9 +53,21 @@ export async function GET(request: NextRequest) {
       const userEmail = data.user.email;
       console.log("OAuth user authenticated:", userEmail);
       
-      // If signup parameter is true, this is a new registration
-      // Redirect to confirm-signup for email verification
+      // Check if user exists in Supabase auth
+      const { data: existingUser, error: fetchError } = await supabase.auth.admin.getUserById(data.user.id);
+      
+      if (!signup && !existingUser) {
+        // LOGIN attempt but user doesn't exist
+        console.log("User does not exist - redirecting to register");
+        redirectTo.pathname = "/register";
+        if (userEmail) {
+          redirectTo.searchParams.set("email", userEmail);
+        }
+        return NextResponse.redirect(redirectTo);
+      }
+      
       if (signup === "true") {
+        // New user signup via OAuth
         console.log("New user signup via OAuth");
         redirectTo.pathname = "/confirm-signup";
       } else {

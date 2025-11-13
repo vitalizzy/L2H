@@ -6,11 +6,11 @@ import { InputForm } from "@/components/ui/input/input-form";
 import { createClient } from "@/utils/supabase/client";
 import { useLanguage } from "@/context/language-context";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { z } from "zod";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const registerFormSchema = z.object({
   email: z.string().email(),
@@ -28,6 +28,7 @@ const defaultValues: RegisterValuesType = {
 
 const RegisterForm = () => {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const { t } = useLanguage();
   const [isLoadingGoogle, setIsLoadingGoogle] = useState(false);
 
@@ -37,6 +38,14 @@ const RegisterForm = () => {
     resolver: zodResolver(registerFormSchema),
     defaultValues,
   });
+
+  // Pre-fill email from query param if user came from failed login
+  useEffect(() => {
+    const emailFromParam = searchParams.get("email");
+    if (emailFromParam) {
+      form.setValue("email", emailFromParam);
+    }
+  }, [searchParams, form]);
 
   async function handleRegister(values: RegisterValuesType) {
     const redirectUrl = typeof window !== "undefined" 
