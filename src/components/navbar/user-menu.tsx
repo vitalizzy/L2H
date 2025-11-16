@@ -11,11 +11,13 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { User } from "lucide-react";
+import { User, Sun, Moon, Monitor } from "lucide-react";
 import { signOut } from "@/app/actions";
+import { useTheme } from "next-themes";
 
 export function UserMenu() {
   const { t } = useLanguage();
+  const { theme, setTheme } = useTheme();
 
   return (
     <DropdownMenu>
@@ -34,6 +36,28 @@ export function UserMenu() {
           <Link className="cursor-pointer" href="/profile">
             {t.navbar.profile}
           </Link>
+        </DropdownMenuItem>
+
+        <DropdownMenuSeparator />
+
+        <DropdownMenuLabel className="text-xs">{t.theme.toggleTheme}</DropdownMenuLabel>
+
+        <DropdownMenuItem onClick={() => setTheme("light")} className="gap-2">
+          <Sun className="h-4 w-4" />
+          <span>{t.theme.light}</span>
+          {theme === "light" && <span className="ml-auto">✓</span>}
+        </DropdownMenuItem>
+
+        <DropdownMenuItem onClick={() => setTheme("dark")} className="gap-2">
+          <Moon className="h-4 w-4" />
+          <span>{t.theme.dark}</span>
+          {theme === "dark" && <span className="ml-auto">✓</span>}
+        </DropdownMenuItem>
+
+        <DropdownMenuItem onClick={() => setTheme("system")} className="gap-2">
+          <Monitor className="h-4 w-4" />
+          <span>{t.theme.system}</span>
+          {theme === "system" && <span className="ml-auto">✓</span>}
         </DropdownMenuItem>
 
         <DropdownMenuSeparator />

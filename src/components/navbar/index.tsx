@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ModeToggle } from "./mode-toggle";
 import { LanguageToggle } from "./language-toggle";
 import { UserMenu } from "./user-menu";
 
@@ -32,7 +31,6 @@ const Navbar = async () => {
           )}
 
           <LanguageToggle />
-          <ModeToggle />
         </div>
       </div>
     </header>
