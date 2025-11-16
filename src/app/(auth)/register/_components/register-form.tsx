@@ -11,18 +11,27 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { z } from "zod";
 
-export const registerFormSchema = z.object({
-  email: z.string().email(),
-  password: z.string().min(8, {
-    message: "Password must be at least 8 characters.",
-  }),
-});
+export const registerFormSchema = z
+  .object({
+    email: z.string().email(),
+    password: z.string().min(8, {
+      message: "Password must be at least 8 characters.",
+    }),
+    confirmPassword: z.string().min(8, {
+      message: "Password must be at least 8 characters.",
+    }),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords don't match",
+    path: ["confirmPassword"],
+  });
 
 type RegisterValuesType = z.infer<typeof registerFormSchema>;
 
 const defaultValues: RegisterValuesType = {
   email: "",
   password: "",
+  confirmPassword: "",
 };
 
 const RegisterForm = () => {
@@ -85,6 +94,14 @@ const RegisterForm = () => {
           type="password"
           label={t.register.password}
           name="password"
+          description=""
+          required
+        />
+
+        <InputForm
+          type="password"
+          label={t.register.confirmPassword || "Confirm Password"}
+          name="confirmPassword"
           description=""
           required
         />
