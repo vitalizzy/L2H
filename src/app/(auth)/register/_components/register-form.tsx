@@ -16,6 +16,9 @@ export const registerFormSchema = z.object({
   password: z.string().min(8, {
     message: "Password must be at least 8 characters.",
   }),
+  fullName: z.string().min(2, {
+    message: "Full name must be at least 2 characters.",
+  }).optional(),
 });
 
 type RegisterValuesType = z.infer<typeof registerFormSchema>;
@@ -23,6 +26,7 @@ type RegisterValuesType = z.infer<typeof registerFormSchema>;
 const defaultValues: RegisterValuesType = {
   email: "",
   password: "",
+  fullName: "",
 };
 
 const RegisterForm = () => {
@@ -45,9 +49,13 @@ const RegisterForm = () => {
       console.log("🔍 Registration attempt:", values.email);
 
       const { error, data } = await supabase.auth.signUp({
-        ...values,
+        email: values.email,
+        password: values.password,
         options: {
-          emailRedirectTo: `${redirectUrl}/auth/callback`,
+          data: {
+            full_name: values.fullName || values.email.split('@')[0],
+          },
+          emailRedirectTo: `${redirectUrl}/api/auth/callback`,
         },
       });
 
@@ -78,6 +86,14 @@ const RegisterForm = () => {
           placeholder={t.register.emailPlaceholder}
           description=""
           required
+        />
+
+        <InputForm
+          label="Nombre Completo"
+          name="fullName"
+          placeholder="Juan Pérez"
+          description=""
+          required={false}
         />
 
         <InputForm

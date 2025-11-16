@@ -18,16 +18,16 @@ BEGIN
   INSERT INTO public.profiles (
     id, 
     email, 
-    full_name, 
-    avatar_url,
-    provider
+    full_name,
+    created_at,
+    updated_at
   )
   VALUES (
     new.id,
     new.email,
     new.user_metadata->>'full_name',
-    new.user_metadata->>'avatar_url',
-    new.user_metadata->>'provider'
+    now(),
+    now()
   );
   RETURN new;
 END;
