@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { getAllPages } from '@/utils/supabase/server';
 import Link from 'next/link';
