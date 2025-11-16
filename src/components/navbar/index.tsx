@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { UserMenu } from "./user-menu";
+import { LanguageMenu } from "./language-menu";
 
 import { createClient } from "@/utils/supabase/server";
 import { Lock } from "lucide-react";
@@ -24,9 +25,12 @@ const Navbar = async () => {
           {user ? (
             <UserMenu />
           ) : (
-            <Button asChild>
-              <Link href="/login">Login</Link>
-            </Button>
+            <>
+              <LanguageMenu />
+              <Button asChild>
+                <Link href="/login">Login</Link>
+              </Button>
+            </>
           )}
         </div>
       </div>
