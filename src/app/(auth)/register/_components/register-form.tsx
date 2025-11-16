@@ -39,24 +39,33 @@ const RegisterForm = () => {
   });
 
   async function handleRegister(values: RegisterValuesType) {
-    const redirectUrl = typeof window !== "undefined" 
-      ? window.location.origin 
-      : process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    try {
+      const redirectUrl = typeof window !== "undefined" 
+        ? window.location.origin 
+        : process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
-    const { error, data } = await supabase.auth.signUp({
-      ...values,
-      options: {
-        emailRedirectTo: `${redirectUrl}/auth/callback`,
-      },
-    });
+      console.log("🔍 Registration attempt:", values.email);
 
-    if (error) return toast.error(error.message);
+      const { error, data } = await supabase.auth.signUp({
+        ...values,
+        options: {
+          emailRedirectTo: `${redirectUrl}/auth/callback`,
+        },
+      });
 
-    console.log({ data });
+      if (error) {
+        console.error("❌ Signup error:", error.message, error.status);
+        toast.error(error.message);
+        return;
+      }
 
-    toast.success(t.register.verificationSent);
-
-    router.replace("/confirm-signup");
+      console.log("✅ Signup successful, user data:", data);
+      toast.success(t.register.verificationSent);
+      router.replace("/confirm-signup");
+    } catch (error) {
+      console.error("❌ Unexpected error:", error);
+      toast.error("An unexpected error occurred during registration");
+    }
   }
 
   async function handleGoogleRegister() {
@@ -66,6 +75,8 @@ const RegisterForm = () => {
         ? window.location.origin 
         : process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
       
+      console.log("🔍 Google OAuth redirect URL:", redirectUrl);
+
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
@@ -74,9 +85,11 @@ const RegisterForm = () => {
       });
 
       if (error) {
+        console.error("❌ OAuth error:", error.message);
         toast.error(error.message);
       }
     } catch (error) {
+      console.error("❌ OAuth unexpected error:", error);
       toast.error("Error signing up with Google");
     } finally {
       setIsLoadingGoogle(false);

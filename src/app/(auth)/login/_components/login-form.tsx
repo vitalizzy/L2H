@@ -39,13 +39,24 @@ const LoginForm = () => {
   });
 
   async function handleLogin(values: LoginValuesType) {
-    const { error } = await supabase.auth.signInWithPassword(values);
+    try {
+      console.log("🔍 Login attempt:", values.email);
+      
+      const { data, error } = await supabase.auth.signInWithPassword(values);
 
-    if (error) return toast.error(error.message);
+      if (error) {
+        console.error("❌ Auth error:", error.message, error.status);
+        toast.error(error.message);
+        return;
+      }
 
-    toast.success(t.login.loginSuccess);
-
-    router.refresh();
+      console.log("✅ Login successful");
+      toast.success(t.login.loginSuccess);
+      router.refresh();
+    } catch (error) {
+      console.error("❌ Unexpected error:", error);
+      toast.error("An unexpected error occurred");
+    }
   }
 
   async function handleGoogleLogin() {
@@ -55,6 +66,8 @@ const LoginForm = () => {
         ? window.location.origin 
         : process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
       
+      console.log("🔍 Google OAuth redirect URL:", redirectUrl);
+      
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
@@ -63,9 +76,11 @@ const LoginForm = () => {
       });
 
       if (error) {
+        console.error("❌ OAuth error:", error.message);
         toast.error(error.message);
       }
     } catch (error) {
+      console.error("❌ OAuth unexpected error:", error);
       toast.error("Error signing in with Google");
     } finally {
       setIsLoadingGoogle(false);
