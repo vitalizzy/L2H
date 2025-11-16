@@ -91,20 +91,6 @@ export default function ForgotPasswordPage() {
             </Button>
           </form>
         </Form>
-
-        {/* Auth Error Message */}
-        {userProvider && (
-          <div className="rounded-lg border border-destructive/50 bg-destructive/10 p-4 text-center">
-            <p className="text-sm font-medium text-destructive">
-              Parece que tu cuenta usa {userProvider === "google" ? "Google" : "LinkedIn"}.
-              <br />
-              Por favor inicia sesión con ese botón en la página de login.
-            </p>
-            <Button variant="outline" asChild className="mt-4 w-full">
-              <Link href="/login">Volver al Login</Link>
-            </Button>
-          </div>
-        )}
       </div>
     </div>
   );
