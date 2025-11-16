@@ -1,70 +1,10 @@
 'use client';
 
-import { MDXRemote } from 'next-mdx-remote/rsc';
 import { X, Calendar, User, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { BlogPage } from '@/types/page';
-
-const mdxComponents = {
-  h1: ({ children }: any) => (
-    <h1 className="text-2xl font-bold mt-6 mb-3">{children}</h1>
-  ),
-  h2: ({ children }: any) => (
-    <h2 className="text-xl font-bold mt-4 mb-2">{children}</h2>
-  ),
-  h3: ({ children }: any) => (
-    <h3 className="text-lg font-bold mt-3 mb-2">{children}</h3>
-  ),
-  h4: ({ children }: any) => (
-    <h4 className="text-base font-bold mt-2 mb-1">{children}</h4>
-  ),
-  p: ({ children }: any) => (
-    <p className="text-sm leading-6 my-3">{children}</p>
-  ),
-  ul: ({ children }: any) => (
-    <ul className="list-disc list-inside space-y-1 my-3 ml-2 text-sm">{children}</ul>
-  ),
-  ol: ({ children }: any) => (
-    <ol className="list-decimal list-inside space-y-1 my-3 ml-2 text-sm">{children}</ol>
-  ),
-  li: ({ children }: any) => (
-    <li className="text-sm leading-6">{children}</li>
-  ),
-  blockquote: ({ children }: any) => (
-    <blockquote className="border-l-4 border-primary pl-3 italic my-3 text-muted-foreground text-sm">
-      {children}
-    </blockquote>
-  ),
-  code: ({ children, className }: any) => {
-    return (
-      <pre className="bg-muted p-3 rounded text-xs overflow-x-auto my-3">
-        <code className={className}>{children}</code>
-      </pre>
-    );
-  },
-  inlineCode: ({ children }: any) => (
-    <code className="bg-muted px-1.5 py-0.5 rounded font-mono text-xs">{children}</code>
-  ),
-  a: ({ href, children }: any) => (
-    <a href={href} className="text-primary hover:underline text-sm">
-      {children}
-    </a>
-  ),
-  img: ({ src, alt }: any) => (
-    <img src={src} alt={alt} className="rounded-lg max-w-full h-auto my-3" />
-  ),
-  table: ({ children }: any) => (
-    <div className="overflow-x-auto my-3">
-      <table className="w-full border-collapse border border-border text-xs">{children}</table>
-    </div>
-  ),
-  th: ({ children }: any) => (
-    <th className="border border-border bg-muted p-1.5 text-left font-bold">{children}</th>
-  ),
-  td: ({ children }: any) => (
-    <td className="border border-border p-1.5">{children}</td>
-  ),
-};
+import type { BlogPage } from '@/types/page';
+import { MDXContent } from './mdx-content';
+import { Suspense } from 'react';
 
 interface ArticleDrawerProps {
   page: BlogPage | null;
@@ -130,9 +70,9 @@ export function ArticleDrawer({ page, onClose, isOpen }: ArticleDrawerProps) {
 
         {/* Content */}
         <div className="flex-1 overflow-y-auto p-4">
-          <article className="prose prose-sm dark:prose-invert max-w-none">
-            <MDXRemote source={page.content} components={mdxComponents} />
-          </article>
+          <Suspense fallback={<div className="text-center py-4 text-sm">Cargando...</div>}>
+            <MDXContent content={page.content} variant="drawer" />
+          </Suspense>
         </div>
 
         {/* Footer */}
