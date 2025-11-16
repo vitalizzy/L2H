@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your L2H Access Link</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 480px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #000;
+            margin-top: 0;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.8;
+        }
+        .button {
+            display: block;
+            width: 100%;
+            background-color: #000;
+            color: #ffffff;
+            padding: 14px 0;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            text-align: center;
+            margin: 24px 0;
+            transition: background 0.2s ease;
+        }
+        .button:hover {
+            background-color: #333;
+        }
+        .security-note {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #555;
+            margin-top: 20px;
+            border-left: 3px solid #000;
+        }
+        .security-note strong {
+            color: #000;
+        }
+        .link-section {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #e5e7eb;
+        }
+        .link-section p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .link-fallback {
+            font-size: 12px;
+            color: #666;
+            word-break: break-all;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        .text-link {
+            color: #000;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .text-link:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #999;
+            text-align: center;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 20px;
+        }
+        .footer p {
+            margin-bottom: 8px;
+        }
+        .expiration-info {
+            background: #f5f5f5;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #666;
+            margin-top: 15px;
+            border-left: 2px solid #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🔐 Your L2H Access Link</h2>
+        
+        <p>Hi {{userName}},</p>
+        <p>We received a request to sign in to your L2H account. Click the button below to access your account securely:</p>
+        
+        <a href="{{magicLinkUrl}}" class="button">Sign In to L2H</a>
+
+        <div class="security-note">
+            <strong>🔒 Security Notice:</strong> This link is temporary and can only be used once. If you didn't request this access, you can safely ignore this email.
+        </div>
+
+        <div class="expiration-info">
+            ⏰ <strong>This link expires in:</strong> {{expirationTime}} (typically 15 minutes)
+        </div>
+
+        <div class="link-section">
+            <p><strong>Button not working?</strong> Copy and paste this link in your browser:</p>
+            <div class="link-fallback">
+                <a href="{{magicLinkUrl}}" class="text-link">{{magicLinkUrl}}</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 L2H. All rights reserved.</p>
+            <p>Questions? Contact us for support.</p>
+        </div>
+    </div>
+</body>
+</html>

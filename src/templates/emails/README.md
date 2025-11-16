@@ -11,6 +11,8 @@ src/templates/emails/
 ├── confirm-email.html        # Email de confirmación de cuenta
 ├── reset-password.html       # Email para reseteo de contraseña
 ├── password-changed.html     # Notificación de cambio de contraseña
+├── invite-user.html          # Email de invitación a usuarios
+├── magic-link.html           # Email de enlace mágico para acceso
 └── README.md                 # Este archivo
 ```
 
@@ -56,6 +58,25 @@ src/templates/emails/
 - `{{userName}}` - Nombre del usuario
 - `{{timestamp}}` - Fecha y hora del cambio
 - `{{appUrl}}` - URL base de la aplicación
+
+### 6. invite-user.html
+**Uso:** Enviado cuando un usuario es invitado a unirse a L2H por otro usuario.
+
+**Variables:**
+- `{{invitedUserName}}` - Nombre del usuario invitado
+- `{{inviterName}}` - Nombre del usuario que invita
+- `{{invitationMessage}}` - Mensaje personal de invitación
+- `{{acceptInvitationUrl}}` - URL para aceptar la invitación
+- `{{supportEmail}}` - Email de soporte
+- `{{appUrl}}` - URL base de la aplicación
+
+### 7. magic-link.html
+**Uso:** Enviado para proporcionar un enlace de acceso mágico (sin contraseña).
+
+**Variables:**
+- `{{userName}}` - Nombre del usuario
+- `{{magicLinkUrl}}` - URL del enlace mágico
+- `{{expirationTime}}` - Tiempo de expiración del enlace
 
 ## Personalización
 
