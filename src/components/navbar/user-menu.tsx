@@ -41,18 +41,20 @@ export function UserMenu() {
       </Button>
 
       {/* Drawer Overlay */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 z-40 bg-black/50 transition-opacity"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
+      <div
+        className={`fixed inset-0 z-40 bg-black/50 transition-opacity ${
+          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setIsOpen(false)}
+        suppressHydrationWarning
+      />
 
       {/* Drawer */}
       <div
         className={`fixed right-0 top-0 h-screen w-[30%] bg-background border-l shadow-lg z-50 transition-transform duration-300 overflow-y-auto ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
+        suppressHydrationWarning
       >
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b sticky top-0 bg-background">
@@ -114,6 +116,7 @@ export function UserMenu() {
                         ? "bg-primary text-primary-foreground"
                         : "hover:bg-accent"
                     }`}
+                    suppressHydrationWarning
                   >
                     <Globe className="h-4 w-4" />
                     <span>{lang.name}</span>
@@ -137,6 +140,7 @@ export function UserMenu() {
                 size="sm"
                 className="gap-2 h-auto flex-col py-3"
                 onClick={() => setTheme("light")}
+                suppressHydrationWarning
               >
                 <Sun className="h-5 w-5" />
                 <span className="text-xs">{t.theme.light}</span>
@@ -146,6 +150,7 @@ export function UserMenu() {
                 size="sm"
                 className="gap-2 h-auto flex-col py-3"
                 onClick={() => setTheme("dark")}
+                suppressHydrationWarning
               >
                 <Moon className="h-5 w-5" />
                 <span className="text-xs">{t.theme.dark}</span>
@@ -155,6 +160,7 @@ export function UserMenu() {
                 size="sm"
                 className="gap-2 h-auto flex-col py-3"
                 onClick={() => setTheme("system")}
+                suppressHydrationWarning
               >
                 <Monitor className="h-5 w-5" />
                 <span className="text-xs">{t.theme.system}</span>
