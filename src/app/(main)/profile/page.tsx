@@ -7,12 +7,11 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/language-context";
 import Image from "next/image";
 import toast from "react-hot-toast";
-import { LogOut, Mail, User } from "lucide-react";
+import { LogOut, Mail } from "lucide-react";
 
 interface Profile {
   id: string;
   email: string;
-  full_name: string | null;
   avatar_url: string | null;
   provider: string | null;
 }
@@ -52,9 +51,7 @@ export default function ProfilePage() {
           setProfile({
             id: user.id,
             email: user.email || "",
-            full_name: user.user_metadata?.full_name || null,
             avatar_url: user.user_metadata?.avatar_url || null,
-            provider: user.user_metadata?.provider || null,
           });
           return;
         }
@@ -139,7 +136,7 @@ export default function ProfilePage() {
                 <div className="relative h-24 w-24 overflow-hidden rounded-full border-4 border-border">
                   <Image
                     src={profile.avatar_url}
-                    alt={profile.full_name || "Avatar"}
+                    alt="Avatar"
                     fill
                     className="object-cover"
                   />
@@ -149,17 +146,6 @@ export default function ProfilePage() {
 
             {/* User Info */}
             <div className="space-y-6">
-              {/* Full Name */}
-              <div className="flex items-center gap-4 rounded-lg bg-muted/50 p-4">
-                <User className="h-5 w-5 text-muted-foreground" />
-                <div>
-                  <p className="text-sm font-medium text-muted-foreground">Nombre</p>
-                  <p className="text-lg font-semibold">
-                    {profile.full_name || "No configurado"}
-                  </p>
-                </div>
-              </div>
-
               {/* Email */}
               <div className="flex items-center gap-4 rounded-lg bg-muted/50 p-4">
                 <Mail className="h-5 w-5 text-muted-foreground" />
