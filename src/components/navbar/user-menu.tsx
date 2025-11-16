@@ -24,12 +24,16 @@ export function UserMenu() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button size="icon" variant="ghost">
-          <User />
+        <Button 
+          size="lg" 
+          variant="default"
+          className="rounded-full h-12 w-12 p-0 shadow-lg hover:shadow-xl transition-shadow"
+        >
+          <User className="h-5 w-5" />
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent sideOffset={5}>
+      <DropdownMenuContent sideOffset={8} align="end" className="w-56">
         <DropdownMenuLabel>{t.navbar.myAccount}</DropdownMenuLabel>
 
         <DropdownMenuSeparator />
