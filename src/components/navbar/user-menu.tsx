@@ -51,14 +51,14 @@ export function UserMenu() {
 
       {/* Drawer */}
       <div
-        className={`fixed right-0 top-0 h-screen w-[30%] bg-background border-l shadow-lg z-50 transition-transform duration-300 overflow-y-auto ${
+        className={`fixed right-0 top-0 h-screen w-[30%] md:w-[40%] sm:w-full bg-background border-l shadow-lg z-50 transition-transform duration-300 overflow-y-auto ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         suppressHydrationWarning
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b sticky top-0 bg-background">
-          <h2 className="text-lg font-semibold">{t.navbar.myAccount}</h2>
+        <div className="flex items-center justify-between p-4 sm:p-6 border-b sticky top-0 bg-background">
+          <h2 className="text-base sm:text-lg font-semibold">{t.navbar.myAccount}</h2>
           <Button
             size="sm"
             variant="ghost"
@@ -70,27 +70,27 @@ export function UserMenu() {
         </div>
 
         {/* Content */}
-        <div className="p-6 space-y-6">
+        <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
           {/* Profile Section */}
-          <div className="space-y-3">
-            <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
+          <div className="space-y-2 sm:space-y-3">
+            <h3 className="text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-wide">
               Account
             </h3>
             <Link
               href="/profile"
-              className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-accent transition-colors"
+              className="flex items-center gap-3 px-3 sm:px-4 py-3 sm:py-3 rounded-lg hover:bg-accent transition-colors text-sm sm:text-base"
               onClick={() => setIsOpen(false)}
             >
-              <User className="h-5 w-5" />
+              <User className="h-4 sm:h-5 w-4 sm:w-5" />
               <span>{t.navbar.profile}</span>
             </Link>
           </div>
 
           {/* Language Section */}
-          <div className="space-y-3">
+          <div className="space-y-2 sm:space-y-3">
             <button
               onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-              className="w-full flex items-center justify-between gap-2 text-sm font-medium text-muted-foreground uppercase tracking-wide hover:text-foreground transition-colors"
+              className="w-full flex items-center justify-between gap-2 text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-wide hover:text-foreground transition-colors"
             >
               <span className="flex items-center gap-2">
                 <Globe className="h-4 w-4" />
@@ -103,7 +103,7 @@ export function UserMenu() {
               />
             </button>
             {isLanguageOpen && (
-              <div className="grid grid-cols-1 gap-2 px-2">
+              <div className="grid grid-cols-1 gap-2 px-1 sm:px-2">
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
@@ -111,7 +111,7 @@ export function UserMenu() {
                       setLanguage(lang.code as any);
                       setIsLanguageOpen(false);
                     }}
-                    className={`text-left px-4 py-2 rounded-md transition-colors flex items-center gap-2 ${
+                    className={`text-left px-3 sm:px-4 py-2 rounded-md transition-colors flex items-center gap-2 text-sm ${
                       language === lang.code
                         ? "bg-primary text-primary-foreground"
                         : "hover:bg-accent"
@@ -130,51 +130,51 @@ export function UserMenu() {
           </div>
 
           {/* Theme Section */}
-          <div className="space-y-3">
-            <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
+          <div className="space-y-2 sm:space-y-3">
+            <h3 className="text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-wide">
               {t.theme.toggleTheme}
             </h3>
             <div className="grid grid-cols-3 gap-2">
               <Button
                 variant={theme === "light" ? "default" : "outline"}
                 size="sm"
-                className="gap-2 h-auto flex-col py-3"
+                className="gap-1 sm:gap-2 h-auto flex-col py-2 sm:py-3 text-xs"
                 onClick={() => setTheme("light")}
                 suppressHydrationWarning
               >
-                <Sun className="h-5 w-5" />
+                <Sun className="h-4 sm:h-5 w-4 sm:w-5" />
                 <span className="text-xs">{t.theme.light}</span>
               </Button>
               <Button
                 variant={theme === "dark" ? "default" : "outline"}
                 size="sm"
-                className="gap-2 h-auto flex-col py-3"
+                className="gap-1 sm:gap-2 h-auto flex-col py-2 sm:py-3 text-xs"
                 onClick={() => setTheme("dark")}
                 suppressHydrationWarning
               >
-                <Moon className="h-5 w-5" />
+                <Moon className="h-4 sm:h-5 w-4 sm:w-5" />
                 <span className="text-xs">{t.theme.dark}</span>
               </Button>
               <Button
                 variant={theme === "system" ? "default" : "outline"}
                 size="sm"
-                className="gap-2 h-auto flex-col py-3"
+                className="gap-1 sm:gap-2 h-auto flex-col py-2 sm:py-3 text-xs"
                 onClick={() => setTheme("system")}
                 suppressHydrationWarning
               >
-                <Monitor className="h-5 w-5" />
+                <Monitor className="h-4 sm:h-5 w-4 sm:w-5" />
                 <span className="text-xs">{t.theme.system}</span>
               </Button>
             </div>
           </div>
 
           {/* Logout Section */}
-          <div className="border-t pt-6">
+          <div className="border-t pt-4 sm:pt-6">
             <form action={signOut} className="w-full">
               <Button
                 variant="destructive"
                 size="sm"
-                className="w-full gap-2"
+                className="w-full gap-2 text-sm sm:text-base py-2 sm:py-3"
                 type="submit"
               >
                 <LogOut className="h-4 w-4" />
