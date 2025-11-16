@@ -110,6 +110,10 @@ export const translations = {
       title: "Página de Perfil",
       email: "Correo Electrónico",
       loading: "Cargando...",
+      logoutButton: "Cerrar Sesión",
+      loggingOut: "Cerrando...",
+      authProvider: "Proveedor de Autenticación",
+      backHome: "Volver al Inicio",
     },
 
     // 404 Not Found Page
@@ -263,6 +267,10 @@ export const translations = {
       title: "Profile Page",
       email: "Email",
       loading: "Loading...",
+      logoutButton: "Logout",
+      loggingOut: "Logging out...",
+      authProvider: "Authentication Provider",
+      backHome: "Back to Home",
     },
 
     // 404 Not Found Page
@@ -417,6 +425,10 @@ export const translations = {
       title: "Profilseite",
       email: "E-Mail",
       loading: "Wird geladen...",
+      logoutButton: "Abmelden",
+      loggingOut: "Wird abgemeldet...",
+      authProvider: "Authentifizierungsanbieter",
+      backHome: "Zurück zur Startseite",
     },
 
     // 404 Not Found Page
@@ -571,6 +583,10 @@ export const translations = {
       title: "Pagina del profilo",
       email: "Email",
       loading: "Caricamento...",
+      logoutButton: "Esci",
+      loggingOut: "Uscita in corso...",
+      authProvider: "Fornitore di Autenticazione",
+      backHome: "Torna a Casa",
     },
 
     // Footer
@@ -717,6 +733,10 @@ export const translations = {
       title: "Page de profil",
       email: "E-mail",
       loading: "Chargement...",
+      logoutButton: "Déconnexion",
+      loggingOut: "Déconnexion en cours...",
+      authProvider: "Fournisseur d'Authentification",
+      backHome: "Retour à l'Accueil",
     },
 
     // 404 Not Found Page
@@ -871,6 +891,10 @@ export const translations = {
       title: "Página de perfil",
       email: "Email",
       loading: "Carregando...",
+      logoutButton: "Sair",
+      loggingOut: "Saindo...",
+      authProvider: "Provedor de Autenticação",
+      backHome: "Voltar para Home",
     },
 
     // Footer
@@ -1017,6 +1041,10 @@ export const translations = {
       title: "Profiloldal",
       email: "E-mail",
       loading: "Betöltés...",
+      logoutButton: "Kijelentkezés",
+      loggingOut: "Kijelentkezés...",
+      authProvider: "Hitelesítési Szolgáltató",
+      backHome: "Vissza a Kezdőlapra",
     },
 
     // 404 Not Found Page
@@ -1171,6 +1199,10 @@ export const translations = {
       title: "Profilsida",
       email: "E-post",
       loading: "Laddar...",
+      logoutButton: "Logga ut",
+      loggingOut: "Loggar ut...",
+      authProvider: "Autentiseringsleverantör",
+      backHome: "Tillbaka till Hem",
     },
 
     // 404 Not Found Page
@@ -1325,6 +1357,10 @@ export const translations = {
       title: "Profilside",
       email: "E-mail",
       loading: "Indlæser...",
+      logoutButton: "Log ud",
+      loggingOut: "Logger ud...",
+      authProvider: "Godkendelsesprovider",
+      backHome: "Tilbage til Startside",
     },
 
     // 404 Not Found Page
@@ -1479,6 +1515,10 @@ export const translations = {
       title: "Страница профиля",
       email: "Электронная почта",
       loading: "Загрузка...",
+      logoutButton: "Выход",
+      loggingOut: "Выход...",
+      authProvider: "Поставщик Аутентификации",
+      backHome: "Вернуться на Главную",
     },
 
     // 404 Not Found Page
@@ -1633,6 +1673,10 @@ export const translations = {
       title: "Pagina de profil",
       email: "Email",
       loading: "Se încarcă...",
+      logoutButton: "Deconectare",
+      loggingOut: "Se deconectează...",
+      authProvider: "Furnizor de Autentificare",
+      backHome: "Înapoi la Pagina Principală",
     },
 
     // Footer

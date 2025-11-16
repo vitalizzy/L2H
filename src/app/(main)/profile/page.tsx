@@ -101,9 +101,9 @@ export default function ProfilePage() {
     return (
       <div className="container flex h-screen items-center justify-center">
         <div className="text-center">
-          <p className="text-muted-foreground">Perfil no encontrado</p>
+          <p className="text-muted-foreground">{t.profile.title}</p>
           <Button asChild className="mt-4">
-            <a href="/">Volver al inicio</a>
+            <a href="/">{t.profile.backHome}</a>
           </Button>
         </div>
       </div>
@@ -125,7 +125,7 @@ export default function ProfilePage() {
               className="gap-2"
             >
               <LogOut className="h-4 w-4" />
-              {isLoggingOut ? "Cerrando..." : "Cerrar Sesión"}
+              {isLoggingOut ? t.profile.loggingOut : t.profile.logoutButton}
             </Button>
           </div>
 
@@ -161,7 +161,7 @@ export default function ProfilePage() {
               {/* Provider */}
               <div className="rounded-lg bg-muted/50 p-4">
                 <p className="text-sm font-medium text-muted-foreground">
-                  Proveedor de Autenticación
+                  {t.profile.authProvider}
                 </p>
                 <p className="text-lg font-semibold">📧 Email/Password</p>
               </div>
@@ -172,7 +172,7 @@ export default function ProfilePage() {
         {/* Back to Home */}
         <div className="mt-8 text-center">
           <Button variant="outline" asChild>
-            <a href="/">Volver al Inicio</a>
+            <a href="/">{t.profile.backHome}</a>
           </Button>
         </div>
       </div>
