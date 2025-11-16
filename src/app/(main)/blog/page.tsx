@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { getAllPages } from '@/utils/supabase/server';
+import { getAllPages } from '@/utils/supabase/client';
 import Link from 'next/link';
 import { ArrowRight, Calendar, User, Eye, Maximize2 } from 'lucide-react';
 import { ArticleModal } from './_components/article-modal';
