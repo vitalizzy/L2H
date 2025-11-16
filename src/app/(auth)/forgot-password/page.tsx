@@ -26,7 +26,6 @@ export default function ForgotPasswordPage() {
   const { t } = useLanguage();
   const supabase = createClient();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [userProvider, setUserProvider] = useState<string | null>(null);
 
   const form = useForm<ForgotPasswordValues>({
     resolver: zodResolver(forgotPasswordSchema),
@@ -38,27 +37,7 @@ export default function ForgotPasswordPage() {
   const onSubmit = async (values: ForgotPasswordValues) => {
     setIsSubmitting(true);
     try {
-      // First, check if user exists and get their provider
-      const { data: { users }, error: listError } = await supabase.auth.admin.listUsers();
-
-      if (!listError && users) {
-        const user = users.find((u) => u.email === values.email);
-
-        if (user) {
-          const provider = user.user_metadata?.provider;
-          
-          // If user uses OAuth, show error message
-          if (provider === "google" || provider === "linkedin") {
-            setUserProvider(provider);
-            toast.error(
-              `Tu cuenta usa ${provider === "google" ? "Google" : "LinkedIn"}. Por favor inicia sesión con ese botón.`
-            );
-            return;
-          }
-        }
-      }
-
-      // If email/password user or email not found, send reset link
+      // Send reset link
       const { error } = await supabase.auth.resetPasswordForEmail(values.email, {
         redirectTo: `${window.location.origin}/auth/callback?type=recovery`,
       });

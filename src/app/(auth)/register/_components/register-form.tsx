@@ -10,7 +10,6 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { z } from "zod";
-import { useState } from "react";
 
 export const registerFormSchema = z.object({
   email: z.string().email(),
@@ -29,7 +28,6 @@ const defaultValues: RegisterValuesType = {
 const RegisterForm = () => {
   const router = useRouter();
   const { t } = useLanguage();
-  const [isLoadingGoogle, setIsLoadingGoogle] = useState(false);
 
   const supabase = createClient();
 
@@ -68,34 +66,6 @@ const RegisterForm = () => {
     }
   }
 
-  async function handleGoogleRegister() {
-    setIsLoadingGoogle(true);
-    try {
-      const redirectUrl = typeof window !== "undefined" 
-        ? window.location.origin 
-        : process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-      
-      console.log("🔍 Google OAuth redirect URL:", redirectUrl);
-
-      const { error } = await supabase.auth.signInWithOAuth({
-        provider: "google",
-        options: {
-          redirectTo: `${redirectUrl}/auth/callback?signup=true`,
-        },
-      });
-
-      if (error) {
-        console.error("❌ OAuth error:", error.message);
-        toast.error(error.message);
-      }
-    } catch (error) {
-      console.error("❌ OAuth unexpected error:", error);
-      toast.error("Error signing up with Google");
-    } finally {
-      setIsLoadingGoogle(false);
-    }
-  }
-
   return (
     <Form {...form}>
       <form
@@ -119,25 +89,6 @@ const RegisterForm = () => {
         />
 
         <Button>{t.register.button}</Button>
-
-        <div className="relative my-4">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-muted"></div>
-          </div>
-          <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-background px-2 text-muted-foreground">O</span>
-          </div>
-        </div>
-
-        <Button
-          type="button"
-          variant="outline"
-          onClick={handleGoogleRegister}
-          disabled={isLoadingGoogle}
-          className="w-full"
-        >
-          {isLoadingGoogle ? "Signing up..." : "Sign up with Google"}
-        </Button>
       </form>
     </Form>
   );

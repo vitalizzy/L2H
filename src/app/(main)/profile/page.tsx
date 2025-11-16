@@ -172,18 +172,12 @@ export default function ProfilePage() {
               </div>
 
               {/* Provider */}
-              {profile.provider && (
-                <div className="rounded-lg bg-muted/50 p-4">
-                  <p className="text-sm font-medium text-muted-foreground">
-                    Proveedor de Autenticación
-                  </p>
-                  <p className="text-lg font-semibold capitalize">
-                    {profile.provider === "google" && "🔵 Google"}
-                    {profile.provider === "email" && "📧 Email/Password"}
-                    {profile.provider === "linkedin" && "🔗 LinkedIn"}
-                  </p>
-                </div>
-              )}
+              <div className="rounded-lg bg-muted/50 p-4">
+                <p className="text-sm font-medium text-muted-foreground">
+                  Proveedor de Autenticación
+                </p>
+                <p className="text-lg font-semibold">📧 Email/Password</p>
+              </div>
             </div>
           </div>
         </div>
