@@ -82,13 +82,21 @@ export default function ResetPasswordPage() {
       const result = await response.json();
 
       if (!response.ok) {
-        console.error("[Reset Password] Error:", result.error);
-        toast.error(result.error || "Failed to update password");
+        console.error("[Reset Password] Error:", result.error, "Status:", response.status);
+        
+        if (response.status === 401) {
+          toast.error("Your reset link has expired. Please request a new one.");
+          setTimeout(() => router.push("/forgot-password"), 1500);
+        } else if (response.status === 400) {
+          toast.error(result.error || "Invalid password format");
+        } else {
+          toast.error(result.error || "Failed to update password");
+        }
         return;
       }
 
       console.log("[Reset Password] Success");
-      toast.success("Password updated successfully!");
+      toast.success(result.message || "Password updated successfully!");
 
       // Redirect to login after successful password reset
       setTimeout(() => router.push("/login"), 1500);

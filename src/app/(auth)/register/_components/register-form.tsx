@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { InputForm } from "@/components/ui/input/input-form";
@@ -36,6 +37,7 @@ const defaultValues: RegisterValuesType = {
 const RegisterForm = () => {
   const router = useRouter();
   const { t } = useLanguage();
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const form = useForm<RegisterValuesType>({
     resolver: zodResolver(registerFormSchema),
@@ -43,6 +45,7 @@ const RegisterForm = () => {
   });
 
   async function handleRegister(values: RegisterValuesType) {
+    setIsLoading(true);
     try {
       console.log("🔍 Registration attempt:", values.email);
 
@@ -61,7 +64,7 @@ const RegisterForm = () => {
       const result = await response.json();
 
       if (!response.ok) {
-        console.error("❌ Signup error:", result.error);
+        console.error("❌ Signup error:", result.error, "Status:", response.status);
         
         // Detectar si el usuario ya existe basándose en el mensaje de error de Supabase
         if (
@@ -69,6 +72,10 @@ const RegisterForm = () => {
           result.error?.includes("User already exists")
         ) {
           toast.error(t.register.userExists || "This email is already registered. Please login or use a different email.");
+        } else if (response.status === 429) {
+          toast.error("Too many registration attempts. Please try again later.");
+        } else if (response.status === 400) {
+          toast.error(result.error || "Invalid registration data");
         } else {
           toast.error(result.error || "Registration failed");
         }
@@ -81,6 +88,8 @@ const RegisterForm = () => {
     } catch (error) {
       console.error("❌ Unexpected error:", error);
       toast.error("An unexpected error occurred during registration");
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -114,7 +123,9 @@ const RegisterForm = () => {
           required
         />
 
-        <Button>{t.register.button}</Button>
+        <Button disabled={isLoading}>
+          {isLoading ? "Registering..." : t.register.button}
+        </Button>
       </form>
     </Form>
   );

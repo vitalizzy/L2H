@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { InputForm } from "@/components/ui/input/input-form";
@@ -27,6 +28,7 @@ const defaultValues: LoginValuesType = {
 const LoginForm = () => {
   const router = useRouter();
   const { t } = useLanguage();
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const form = useForm<LoginValuesType>({
     resolver: zodResolver(loginFormSchema),
@@ -34,6 +36,7 @@ const LoginForm = () => {
   });
 
   async function handleLogin(values: LoginValuesType) {
+    setIsLoading(true);
     try {
       console.log("🔍 Login attempt:", values.email);
 
@@ -52,8 +55,16 @@ const LoginForm = () => {
       const result = await response.json();
 
       if (!response.ok) {
-        console.error("❌ Login error:", result.error);
-        toast.error(result.error || "Login failed");
+        console.error("❌ Login error:", result.error, "Status:", response.status);
+        
+        // Manejo específico de errores
+        if (response.status === 429) {
+          toast.error("Too many login attempts. Please try again later.");
+        } else if (response.status === 400 || response.status === 401) {
+          toast.error(result.error || "Invalid email or password");
+        } else {
+          toast.error(result.error || "Login failed");
+        }
         return;
       }
 
@@ -63,6 +74,8 @@ const LoginForm = () => {
     } catch (error) {
       console.error("❌ Unexpected error:", error);
       toast.error("An unexpected error occurred");
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -97,7 +110,9 @@ const LoginForm = () => {
           </a>
         </div>
 
-        <Button>{t.login.button}</Button>
+        <Button disabled={isLoading}>
+          {isLoading ? "Logging in..." : t.login.button}
+        </Button>
       </form>
     </Form>
   );

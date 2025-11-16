@@ -1,6 +1,5 @@
 "use client";
 
-import { createClient } from "@/utils/supabase/client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -50,12 +49,18 @@ export default function ForgotPasswordPage() {
       const result = await response.json();
 
       if (!response.ok) {
-        toast.error(result.error || "Error sending reset email");
+        console.error("❌ Forgot password error:", result.error, "Status:", response.status);
+        
+        if (response.status === 429) {
+          toast.error("Too many password reset requests. Please try again later.");
+        } else {
+          toast.error(result.error || "Error sending reset email");
+        }
         return;
       }
 
       // Mostrar mensaje genérico por seguridad (no confirmar si el email existe)
-      toast.success("If an account exists with this email, you will receive a password reset link.");
+      toast.success(result.message || "If an account exists with this email, you will receive a password reset link.");
       form.reset();
     } catch (error) {
       console.error("Error:", error);
