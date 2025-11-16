@@ -14,7 +14,7 @@ export const translations = {
     home: {
       badge: "Plantilla Minimalista con",
       title:
-        "Next.js 14 Supabase Authentication Playground: Construyendo Experiencias Web Modernas Juntos",
+        "Tu Kit de Inicio para Crear Mini SaaS Rentables: Auténtica, Escalable y Lista para el Mercado",
       description:
         "Explora el mundo de la programación de código abierto y el desarrollo web seguro. Cada línea de código es código abierto - ¡Contribuye al futuro del desarrollo web con Supabase Authentication!",
       getStarted: "Comenzar",
@@ -172,7 +172,7 @@ export const translations = {
     home: {
       badge: "Minimal Template with",
       title:
-        "Next.js 14 Supabase Authentication Playground: Building Modern Web Experiences Together",
+        "Your Mini SaaS Starter Kit: Launch Profitable Products in Days, Not Months",
       description:
         "Explore the World of Open Source Coding and Secure Web Development. Every Line of Code is Open Source - Contribute to the Future of Web Development with Supabase Authentication!",
       getStarted: "Get Started",
@@ -329,7 +329,7 @@ export const translations = {
     home: {
       badge: "Minimale Vorlage mit",
       title:
-        "Next.js 14 Supabase Authentication Playground: Gemeinsames Aufbau moderner Web-Erfahrungen",
+        "Mini-SaaS Starter Kit: Rentable Produkte schnell starten und skalieren",
       description:
         "Erkunden Sie die Welt der Open-Source-Programmierung und der sicheren Webentwicklung. Jede Codezeile ist Open Source - Tragen Sie zur Zukunft der Webentwicklung mit Supabase Authentication bei!",
       getStarted: "Loslegen",
@@ -487,7 +487,7 @@ export const translations = {
     home: {
       badge: "Modello minimalista con",
       title:
-        "Next.js 14 Supabase Authentication Playground: Costruire esperienze web moderne insieme",
+        "Il Tuo Mini SaaS Starter Kit: Crea Prodotti Redditizi in Pochi Giorni",
       description:
         "Esplora il mondo della codifica open source e dello sviluppo web sicuro. Ogni riga di codice è open source - Contribuisci al futuro dello sviluppo web con Supabase Authentication!",
       getStarted: "Inizia",
@@ -637,7 +637,7 @@ export const translations = {
     home: {
       badge: "Modèle minimal avec",
       title:
-        "Terrain de jeu d'authentification Next.js 14 Supabase: Construire ensemble des expériences Web modernes",
+        "Votre Kit de Démarrage Mini SaaS: Lancez des Produits Rentables Rapidement",
       description:
         "Explorez le monde du codage open source et du développement web sécurisé. Chaque ligne de code est open source - Contribuez à l'avenir du développement web avec Supabase Authentication!",
       getStarted: "Commencer",
@@ -795,7 +795,7 @@ export const translations = {
     home: {
       badge: "Modelo minimalista com",
       title:
-        "Next.js 14 Supabase Authentication Playground: Construindo experiências web modernas juntos",
+        "Seu Kit de Início para Mini SaaS: Lance Produtos Lucrativos em Dias",
       description:
         "Explore o mundo da codificação de código aberto e do desenvolvimento web seguro. Cada linha de código é código aberto - Contribua para o futuro do desenvolvimento web com Supabase Authentication!",
       getStarted: "Começar",
@@ -945,7 +945,7 @@ export const translations = {
     home: {
       badge: "Minimális sablon",
       title:
-        "Next.js 14 Supabase Authentication Playground: Modern webes tapasztalatok építése együtt",
+        "Mini SaaS Kezdőcsomag: Jövedelmező Termékek Indítása Napok Alatt",
       description:
         "Fedezze fel a nyílt forráskódú kódolás és biztonságos webfejlesztés világát. Minden kódsor nyílt forráskód - Járuljon hozzá a webfejlesztés jövőjéhez a Supabase Authentication segítségével!",
       getStarted: "Kezdje el",
@@ -1103,7 +1103,7 @@ export const translations = {
     home: {
       badge: "Minimal mall med",
       title:
-        "Next.js 14 Supabase Authentication Playground: Bygga moderna webbupplevelser tillsammans",
+        "Din Mini SaaS Startpaket: Lansera Lönsamma Produkter Snabbt",
       description:
         "Utforska världen av öppen källkod och säker webbutveckling. Varje rad kod är öppen källkod - Bidra till framtiden för webbutveckling med Supabase Authentication!",
       getStarted: "Kom igång",
@@ -1261,7 +1261,7 @@ export const translations = {
     home: {
       badge: "Minimal skabelon med",
       title:
-        "Next.js 14 Supabase Authentication Playground: Bygning af moderne webudlevelser sammen",
+        "Dit Mini SaaS Starterpakke: Start Rentable Produkter Hurtigt",
       description:
         "Udforsk verden af open source-kodning og sikker webudvikling. Hver linje kode er open source - Bidrag til fremtiden for webdesign med Supabase Authentication!",
       getStarted: "Kom i gang",
@@ -1419,7 +1419,7 @@ export const translations = {
     home: {
       badge: "Минимальный шаблон с",
       title:
-        "Next.js 14 Supabase Authentication Playground: Создание современных веб-опытов вместе",
+        "Ваш Стартовый Набор для Мини SaaS: Запустите Прибыльные Продукты за Дни",
       description:
         "Исследуйте мир открытого исходного кода и безопасной веб-разработки. Каждая строка кода - это открытый исходный код - Присоединяйтесь к будущему веб-разработки с помощью Supabase Authentication!",
       getStarted: "Начать",
@@ -1577,7 +1577,7 @@ export const translations = {
     home: {
       badge: "Șablon minimal cu",
       title:
-        "Next.js 14 Supabase Authentication Playground: Construind experiențe web moderne împreună",
+        "Kitul Tău de Pornire Mini SaaS: Lansează Produse Profitabile Rapid",
       description:
         "Explorează lumea codificării open source și a dezvoltării web sigure. Fiecare linie de cod este open source - Contribuie la viitorul dezvoltării web cu Supabase Authentication!",
       getStarted: "Începe",
