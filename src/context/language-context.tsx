@@ -20,14 +20,15 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     // Get language from localStorage or browser
     const savedLanguage = localStorage.getItem("language") as Language | null;
+    const supportedLanguages: Language[] = ["es", "en", "de", "it", "fr", "pt", "hu", "sv", "da", "ru", "ro"];
 
-    if (savedLanguage && ["es", "en", "de"].includes(savedLanguage)) {
+    if (savedLanguage && supportedLanguages.includes(savedLanguage)) {
       setLanguageState(savedLanguage);
     } else {
       // Detect browser language
-      const browserLang = navigator.language.split("-")[0];
-      if (["es", "en", "de"].includes(browserLang)) {
-        setLanguageState(browserLang as Language);
+      const browserLang = navigator.language.split("-")[0] as Language;
+      if (supportedLanguages.includes(browserLang)) {
+        setLanguageState(browserLang);
       } else {
         setLanguageState("en"); // Default to English
       }
