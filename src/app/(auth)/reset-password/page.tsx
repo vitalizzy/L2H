@@ -67,23 +67,31 @@ export default function ResetPasswordPage() {
     setIsLoading(true);
 
     try {
-      const { error } = await supabase.auth.updateUser({
-        password: data.password,
+      // Llamar a la ruta API de reset-password
+      const response = await fetch("/api/auth/reset-password", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          password: data.password,
+          confirmPassword: data.confirmPassword,
+        }),
       });
 
-      if (error) {
-        console.error("[Reset Password] Error:", error);
-        toast.error(error.message || "Failed to update password");
-      } else {
-        console.log("[Reset Password] Success");
-        toast.success("Password updated successfully!");
-        
-        // Sign out user after password reset
-        await supabase.auth.signOut();
-        
-        // Redirect to login
-        setTimeout(() => router.push("/login"), 1500);
+      const result = await response.json();
+
+      if (!response.ok) {
+        console.error("[Reset Password] Error:", result.error);
+        toast.error(result.error || "Failed to update password");
+        return;
       }
+
+      console.log("[Reset Password] Success");
+      toast.success("Password updated successfully!");
+
+      // Redirect to login after successful password reset
+      setTimeout(() => router.push("/login"), 1500);
     } catch (error) {
       console.error("[Reset Password] Unexpected error:", error);
       toast.error("An unexpected error occurred");

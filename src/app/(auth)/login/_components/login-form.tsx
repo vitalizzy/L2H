@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { InputForm } from "@/components/ui/input/input-form";
-import { createClient } from "@/utils/supabase/client";
 import { useLanguage } from "@/context/language-context";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
@@ -29,8 +28,6 @@ const LoginForm = () => {
   const router = useRouter();
   const { t } = useLanguage();
 
-  const supabase = createClient();
-
   const form = useForm<LoginValuesType>({
     resolver: zodResolver(loginFormSchema),
     defaultValues,
@@ -39,12 +36,24 @@ const LoginForm = () => {
   async function handleLogin(values: LoginValuesType) {
     try {
       console.log("🔍 Login attempt:", values.email);
-      
-      const { data, error } = await supabase.auth.signInWithPassword(values);
 
-      if (error) {
-        console.error("❌ Auth error:", error.message, error.status);
-        toast.error(error.message);
+      // Llamar a la ruta API de login
+      const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: values.email,
+          password: values.password,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        console.error("❌ Login error:", result.error);
+        toast.error(result.error || "Login failed");
         return;
       }
 

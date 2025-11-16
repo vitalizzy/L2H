@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { InputForm } from "@/components/ui/input/input-form";
-import { createClient } from "@/utils/supabase/client";
 import { useLanguage } from "@/context/language-context";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
@@ -38,8 +37,6 @@ const RegisterForm = () => {
   const router = useRouter();
   const { t } = useLanguage();
 
-  const supabase = createClient();
-
   const form = useForm<RegisterValuesType>({
     resolver: zodResolver(registerFormSchema),
     defaultValues,
@@ -47,27 +44,38 @@ const RegisterForm = () => {
 
   async function handleRegister(values: RegisterValuesType) {
     try {
-      const redirectUrl = typeof window !== "undefined" 
-        ? window.location.origin 
-        : process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-
       console.log("🔍 Registration attempt:", values.email);
 
-      const { error, data } = await supabase.auth.signUp({
-        email: values.email,
-        password: values.password,
-        options: {
-          emailRedirectTo: `${redirectUrl}/api/auth/callback`,
+      // Llamar a la ruta API de registro
+      const response = await fetch("/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
+        body: JSON.stringify({
+          email: values.email,
+          password: values.password,
+        }),
       });
 
-      if (error) {
-        console.error("❌ Signup error:", error.message, error.status);
-        toast.error(error.message);
+      const result = await response.json();
+
+      if (!response.ok) {
+        console.error("❌ Signup error:", result.error);
+        
+        // Detectar si el usuario ya existe basándose en el mensaje de error de Supabase
+        if (
+          result.error?.includes("already registered") ||
+          result.error?.includes("User already exists")
+        ) {
+          toast.error(t.register.userExists || "This email is already registered. Please login or use a different email.");
+        } else {
+          toast.error(result.error || "Registration failed");
+        }
         return;
       }
 
-      console.log("✅ Signup successful, user data:", data);
+      console.log("✅ Signup successful");
       toast.success(t.register.verificationSent);
       router.replace("/confirm-signup");
     } catch (error) {

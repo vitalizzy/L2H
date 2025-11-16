@@ -24,7 +24,6 @@ type ForgotPasswordValues = z.infer<typeof forgotPasswordSchema>;
 export default function ForgotPasswordPage() {
   const router = useRouter();
   const { t } = useLanguage();
-  const supabase = createClient();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<ForgotPasswordValues>({
@@ -37,17 +36,26 @@ export default function ForgotPasswordPage() {
   const onSubmit = async (values: ForgotPasswordValues) => {
     setIsSubmitting(true);
     try {
-      // Send reset link
-      const { error } = await supabase.auth.resetPasswordForEmail(values.email, {
-        redirectTo: `${window.location.origin}/auth/callback?type=recovery`,
+      // Llamar a la ruta API de forgot-password
+      const response = await fetch("/api/auth/forgot-password", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: values.email,
+        }),
       });
 
-      if (error) {
-        toast.error(error.message);
+      const result = await response.json();
+
+      if (!response.ok) {
+        toast.error(result.error || "Error sending reset email");
         return;
       }
 
-      toast.success("Email de recuperación enviado. Revisa tu bandeja de entrada.");
+      // Mostrar mensaje genérico por seguridad (no confirmar si el email existe)
+      toast.success("If an account exists with this email, you will receive a password reset link.");
       form.reset();
     } catch (error) {
       console.error("Error:", error);
