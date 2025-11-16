@@ -1,6 +1,7 @@
 import { createServerClient } from "@supabase/ssr";
+import { createClient as createSupabaseClient } from "@supabase/supabase-js";
 import { cookies } from "next/headers";
-import { BlogPage } from "@/types/page";
+import type { BlogPage } from "@/types/page";
 
 export async function createClient() {
   const cookieStore = await cookies();
@@ -29,6 +30,14 @@ export async function createClient() {
         },
       },
     }
+  );
+}
+
+// Simple Supabase client without cookies (for static generation)
+function getStaticClient() {
+  return createSupabaseClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   );
 }
 
@@ -61,7 +70,7 @@ export async function getAllPages(): Promise<BlogPage[]> {
 }
 
 export async function getPageSlugs(): Promise<string[]> {
-  const client = await createClient();
+  const client = getStaticClient();
 
   const { data, error } = await client
     .from("pages")
