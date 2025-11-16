@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to L2H</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #000;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .header p {
+            color: #666;
+            font-size: 16px;
+        }
+        .content {
+            margin: 30px 0;
+        }
+        .content h2 {
+            color: #000;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .content p {
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.8;
+        }
+        .button {
+            display: inline-block;
+            background-color: #000;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+        .button:hover {
+            background-color: #333;
+        }
+        .features {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        .features ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .features li {
+            padding: 10px 0;
+            color: #555;
+            border-bottom: 1px solid #eee;
+        }
+        .features li:last-child {
+            border-bottom: none;
+        }
+        .features li:before {
+            content: "✓ ";
+            color: #000;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 14px;
+        }
+        .footer a {
+            color: #000;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Welcome to L2H</h1>
+            <p>Your Mini SaaS Starter Kit</p>
+        </div>
+
+        <div class="content">
+            <h2>Hi {{userName}},</h2>
+            <p>Thank you for joining L2H! We're excited to have you on board.</p>
+            
+            <p>L2H is your complete Mini SaaS Starter Kit designed to help you build and launch profitable products faster than ever before.</p>
+
+            <div class="features">
+                <ul>
+                    <li>Ready-to-use authentication system</li>
+                    <li>Modern, responsive UI built with Next.js and Tailwind CSS</li>
+                    <li>Secure database with Supabase</li>
+                    <li>Multi-language support (11 languages)</li>
+                    <li>Production-ready codebase</li>
+                </ul>
+            </div>
+
+            <p>Get started by exploring your profile and customizing L2H for your needs.</p>
+
+            <center>
+                <a href="{{appUrl}}/profile" class="button">Go to Your Profile</a>
+            </center>
+
+            <p>If you have any questions or need support, feel free to reach out to our team.</p>
+
+            <p>Happy building!<br>The L2H Team</p>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 L2H. All rights reserved.</p>
+            <p><a href="{{appUrl}}">Visit L2H</a></p>
+        </div>
+    </div>
+</body>
+</html>
