@@ -33,7 +33,12 @@ export function UserMenu() {
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent sideOffset={8} align="end" className="w-56">
+      <DropdownMenuContent 
+        sideOffset={12} 
+        side="right"
+        align="start" 
+        className="w-72 right-0"
+      >
         <DropdownMenuLabel>{t.navbar.myAccount}</DropdownMenuLabel>
 
         <DropdownMenuSeparator />
