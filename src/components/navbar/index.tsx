@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { LanguageToggle } from "./language-toggle";
 import { UserMenu } from "./user-menu";
 
 import { createClient } from "@/utils/supabase/server";
@@ -29,8 +28,6 @@ const Navbar = async () => {
               <Link href="/login">Login</Link>
             </Button>
           )}
-
-          <LanguageToggle />
         </div>
       </div>
     </header>

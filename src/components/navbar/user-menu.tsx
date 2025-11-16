@@ -10,13 +10,15 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
 } from "@/components/ui/dropdown-menu";
-import { User, Sun, Moon, Monitor } from "lucide-react";
+import { User, Sun, Moon, Monitor, Globe } from "lucide-react";
 import { signOut } from "@/app/actions";
 import { useTheme } from "next-themes";
 
 export function UserMenu() {
-  const { t } = useLanguage();
+  const { t, language, setLanguage } = useLanguage();
   const { theme, setTheme } = useTheme();
 
   return (
@@ -37,6 +39,71 @@ export function UserMenu() {
             {t.navbar.profile}
           </Link>
         </DropdownMenuItem>
+
+        <DropdownMenuSeparator />
+
+        <DropdownMenuLabel className="text-xs">{t.language.selectLanguage}</DropdownMenuLabel>
+
+        <DropdownMenuRadioGroup
+          value={language}
+          onValueChange={(value) => setLanguage(value as any)}
+        >
+          <DropdownMenuRadioItem value="es" className="gap-2">
+            <Globe className="h-4 w-4" />
+            <span>{t.language.spanish}</span>
+            {language === "es" && <span className="ml-auto">✓</span>}
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="en" className="gap-2">
+            <Globe className="h-4 w-4" />
+            <span>{t.language.english}</span>
+            {language === "en" && <span className="ml-auto">✓</span>}
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="de" className="gap-2">
+            <Globe className="h-4 w-4" />
+            <span>{t.language.german}</span>
+            {language === "de" && <span className="ml-auto">✓</span>}
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="it" className="gap-2">
+            <Globe className="h-4 w-4" />
+            <span>{t.language.italian}</span>
+            {language === "it" && <span className="ml-auto">✓</span>}
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="fr" className="gap-2">
+            <Globe className="h-4 w-4" />
+            <span>{t.language.french}</span>
+            {language === "fr" && <span className="ml-auto">✓</span>}
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="pt" className="gap-2">
+            <Globe className="h-4 w-4" />
+            <span>{t.language.portuguese}</span>
+            {language === "pt" && <span className="ml-auto">✓</span>}
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="hu" className="gap-2">
+            <Globe className="h-4 w-4" />
+            <span>{t.language.hungarian}</span>
+            {language === "hu" && <span className="ml-auto">✓</span>}
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="sv" className="gap-2">
+            <Globe className="h-4 w-4" />
+            <span>{t.language.swedish}</span>
+            {language === "sv" && <span className="ml-auto">✓</span>}
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="da" className="gap-2">
+            <Globe className="h-4 w-4" />
+            <span>{t.language.danish}</span>
+            {language === "da" && <span className="ml-auto">✓</span>}
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="ru" className="gap-2">
+            <Globe className="h-4 w-4" />
+            <span>{t.language.russian}</span>
+            {language === "ru" && <span className="ml-auto">✓</span>}
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="ro" className="gap-2">
+            <Globe className="h-4 w-4" />
+            <span>{t.language.romanian}</span>
+            {language === "ro" && <span className="ml-auto">✓</span>}
+          </DropdownMenuRadioItem>
+        </DropdownMenuRadioGroup>
 
         <DropdownMenuSeparator />
 
