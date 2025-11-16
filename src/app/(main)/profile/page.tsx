@@ -52,6 +52,7 @@ export default function ProfilePage() {
             id: user.id,
             email: user.email || "",
             avatar_url: user.user_metadata?.avatar_url || null,
+            provider: null,
           });
           return;
         }
